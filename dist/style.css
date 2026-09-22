@@ -235,5 +235,3 @@ body{padding-bottom:0}
 #analytics-notice a{flex:none;display:inline-block;margin:0 0 0 4px;font-size:13px;color:var(--muted);text-underline-offset:3px}
 body:has(#analytics-notice:not([hidden])){padding-bottom:100px}
 @media(max-width:650px){#analytics-notice{flex-wrap:wrap;justify-content:flex-start;gap:10px;padding:14px 18px}#analytics-notice p{flex-basis:100%;max-width:none;margin:0;font-size:13px}body:has(#analytics-notice:not([hidden])){padding-bottom:160px}}
-.atlas-footer #share-current{font-size:13px;min-height:32px;padding:4px 0;border:0;background:transparent;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-#share-feedback:empty{display:none}#share-feedback{font-size:12px;color:var(--muted)}

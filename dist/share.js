@@ -29,8 +29,7 @@
  // Capture every detail opening, independent of continent-specific card markup.
  const observer=new MutationObserver(()=>{if($('detail').open)sync();});observer.observe($('detail'),{attributes:true,attributeFilter:['open']});
  window.addEventListener('hashchange',restore);
- async function shareCurrent(){sync(true);const feedback=$('share-feedback');try{await navigator.clipboard.writeText(location.href);feedback.textContent=L('链接已复制','Link copied');}catch{feedback.textContent=L('请复制地址栏中的链接','Copy the link from the address bar');}}
- $('share-current').onclick=shareCurrent;
- const shareButton=document.createElement('button');shareButton.type='button';shareButton.className='detail-share';shareButton.dataset.zh='分享此地点';shareButton.dataset.en='Share this place';shareButton.textContent=L('分享此地点','Share this place');shareButton.onclick=async()=>{await shareCurrent();shareButton.textContent=$('share-feedback').textContent;};$('detail').querySelector('.dialog-toolbar').prepend(shareButton);
+ async function shareCurrent(){sync(true);try{await navigator.clipboard.writeText(location.href);return L('链接已复制','Link copied');}catch{return L('请复制地址栏中的链接','Copy the link from the address bar');}}
+ const shareButton=document.createElement('button');shareButton.type='button';shareButton.className='detail-share';shareButton.dataset.zh='分享此地点';shareButton.dataset.en='Share this place';shareButton.textContent=L('分享此地点','Share this place');shareButton.onclick=async()=>{shareButton.textContent=await shareCurrent();};$('detail').querySelector('.dialog-toolbar').prepend(shareButton);
  if(location.hash)restore();
 })();
