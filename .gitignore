@@ -1,0 +1,9 @@
+.DS_Store
+.local/
+*.log
+*.tar.gz
+docs/previous-chatgpt-hosting.json
+.env
+.env.*
+!.env.example
+europe-history-notes*.json

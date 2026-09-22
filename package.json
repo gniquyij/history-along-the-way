@@ -1,0 +1,10 @@
+{
+  "name": "europe-history-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/content-en.js && node --check dist/i18n.js && node scripts/check-data.mjs && node scripts/check-navigation.mjs && node --check dist/analytics.js && node scripts/check-analytics.mjs && node --check dist/world.js && node scripts/check-africa.mjs && node --check dist/world-map.js && node --check dist/share.js && node --check dist/reuse.js",
+    "build": "node scripts/build-public-data.mjs"
+  }
+}

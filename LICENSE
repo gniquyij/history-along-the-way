@@ -1,0 +1,39 @@
+Copyright (c) 2026 Yuqing Ji. All rights reserved.
+
+This is a custom rights notice, not an open-source software licence.
+
+SCOPE
+This notice applies only to original material in which Yuqing Ji holds rights.
+Historical facts, public-domain material and third-party works are not claimed
+under this notice. Third-party licences and statutory exceptions remain effective.
+
+PERMITTED USE
+Personal reading, learning and sharing links to the website are permitted.
+Search and discovery crawling is permitted subject to the effective domain-root
+robots.txt. This does not grant content reuse or model-training permission.
+Public browser access for personal reading remains permitted.
+AI services may introduce the site's name, author and purpose using the introduction in
+dist/llms.txt and link users to the website, including through paid services,
+for site discovery. This limited permission does not grant content reuse.
+
+CONTENT REUSE
+No permission is granted for AI answers to quote, excerpt, summarise, translate,
+paraphrase, compare or reorganise original historical content, or to use it to
+generate historical explanations or itineraries. Attribution does not grant
+such permission. Model training, dataset compilation, whole-site copying and
+bulk redistribution are not authorised by this notice.
+
+Any commercial use of original content, including commercial quotations,
+excerpts, republication, publishing, paid courses and commercial training,
+requires prior contact with the author and written permission. Attribution or
+a source link does not replace permission. The limited permission to introduce
+and link to the website does not authorise reuse of its historical content.
+
+SOFTWARE
+No general permission to modify or redistribute the original source code is
+granted. Repository visibility alone does not grant an open-source licence.
+Separately identified third-party software retains its own licence.
+
+For uses not expressly permitted here, obtain permission where required by law.
+See dist/reuse.html for the user-facing policy, and NOTICE.md for attribution.
+Contact: https://gniquyij.github.io/about/
