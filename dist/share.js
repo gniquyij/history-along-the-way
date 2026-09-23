@@ -5,7 +5,7 @@
   const a=window.atlasRoute.read(),p=new URLSearchParams({view:a.view,lang});
   if(a.view==='world'){p.set('year',mapYear);if(mapSelected)p.set('place',mapSelected);}
   if(a.view==='europe'){p.set('mode',mode==='country'?'country':'era');p.set('era',selected);if(mode==='country'&&country)p.set('country',country);}
-  if(a.view==='continents'){p.set('region','africa');p.set('mode',a.continentMode);if(a.continentMode==='country'){if(a.selectedCountry)p.set('country',a.selectedCountry);}else p.set('chapter',a.chapter);}
+  if(a.view==='continents'){p.set('region',a.region);p.set('mode',a.continentMode);if(a.continentMode==='country'){if(a.selectedCountry)p.set('country',a.selectedCountry);}else p.set('chapter',a.chapter);}
   if($('detail').open&&$('detail').dataset.site)p.set('site',$('detail').dataset.site);
   return '#'+p.toString();
  }
@@ -21,7 +21,7 @@
   const site=p.get('site');if(SITES.some(s=>s.id===site)){if($('detail').open)renderDetail(site);else openDetail(site);}else if($('detail').open)$('detail').close();
   setTimeout(()=>{restoring=false;},0);
  }
- const navSelector='[data-atlas],[data-continent],[data-era],[data-step],[data-world-era],[data-africa-chapter],[data-continent-chapter],[data-map-place],[data-id].read,#language,#detail-language,#history,#browse,#home';
+ const navSelector='[data-chapter-id],[data-atlas],[data-continent],[data-era],[data-step],[data-world-era],[data-africa-chapter],[data-continent-chapter],[data-map-place],[data-id].read,#language,#detail-language,#history,#browse,#home';
  document.addEventListener('click',e=>{if(e.target.closest(navSelector))queueMicrotask(()=>sync());});
  document.addEventListener('change',e=>{if(['country','continent-country','era-mobile','continent-era-mobile','map-year-number'].includes(e.target.id))queueMicrotask(()=>sync());});
  document.addEventListener('input',e=>{if(e.target.id==='map-year')queueMicrotask(()=>sync(true));});

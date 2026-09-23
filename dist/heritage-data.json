@@ -1,7 +1,7 @@
 {
   "author": "Yuqing Ji",
   "title": "History Along the Way",
-  "scope": "European and African history; curated, not comprehensive",
+  "scope": "Regional history across Europe, Africa, North America, South America and Oceania; curated, not comprehensive",
   "rights": "See reuse.html; third-party licences remain applicable",
   "languages": {
     "zh": {
@@ -335,6 +335,198 @@
           "continent": "africa",
           "sites": [
             "916"
+          ]
+        },
+        {
+          "id": "na-land",
+          "title": "土地知识与早期公共工程",
+          "date": "数千年前起，各地不同步",
+          "question": "公共建筑一定以城市和农业为前提吗？",
+          "summary": "平原上的集体狩猎与密西西比河谷的土方工程，呈现不同的土地利用和协作方式。它们不是通往同一种社会的连续阶段。",
+          "next": "继续观察不同地区如何形成城市和区域网络。",
+          "continent": "north",
+          "sites": [
+            "158",
+            "1435"
+          ]
+        },
+        {
+          "id": "na-meso",
+          "title": "中美洲城市与玛雅诸中心",
+          "date": "前6世纪—16世纪，分地区观察",
+          "question": "不同城市如何组织政治与宗教生活？",
+          "summary": "特奥蒂瓦坎与玛雅诸城的兴衰并不同步。广场、神庙、宫殿与铭文提供观察城市权力、区域交流和地方传统的入口。",
+          "next": "向北对照普韦布洛与密西西比河谷的聚落。",
+          "continent": "north",
+          "sites": [
+            "414",
+            "64",
+            "411",
+            "483"
+          ]
+        },
+        {
+          "id": "na-networks",
+          "title": "普韦布洛聚落与密西西比河谷",
+          "date": "约6—15世纪",
+          "question": "聚落怎样组织资源、仪式与区域联系？",
+          "summary": "西南部的普韦布洛建筑与卡霍基亚的土丘城市属于不同环境与传统。并列观察其空间组织，不能把它们归为一个统一帝国。",
+          "next": "下一阶段关注殖民网络与当地社会的变化。",
+          "continent": "north",
+          "sites": [
+            "353",
+            "27",
+            "198"
+          ]
+        },
+        {
+          "id": "na-colonial",
+          "title": "殖民港口与传教边疆",
+          "date": "16—18世纪",
+          "question": "殖民制度如何进入城市与日常生活？",
+          "summary": "加勒比港口连接帝国航运，北部边疆的传教站则组织宗教、生产与定居。建筑中的文化交流与殖民统治、强制转变需要一同理解。",
+          "next": "独立运动改变了政治制度，移民继续重塑社会。",
+          "continent": "north",
+          "sites": [
+            "204",
+            "1466"
+          ]
+        },
+        {
+          "id": "na-republic",
+          "title": "独立、共和国与移民",
+          "date": "1776年起；19世纪移民记忆",
+          "question": "自由的政治理念如何成为公共记忆？",
+          "summary": "费城的独立大厅与纽约的自由女神像提供美国建国和跨大西洋公共象征的两条线索。它们不等于北美各国共同的独立史。",
+          "next": "把公共纪念物与当地博物馆中的不同群体经历对照。",
+          "continent": "north",
+          "sites": [
+            "78",
+            "307"
+          ]
+        },
+        {
+          "id": "sa-early",
+          "title": "安第斯早期中心与宗教空间",
+          "date": "约前3000—前300年",
+          "question": "城市与宗教中心怎样组织人群？",
+          "summary": "卡拉尔的台地建筑与查文的仪式空间属于不同年代。它们让安第斯历史在印加之前的复杂发展变得可见。",
+          "next": "继续沿海岸与山地比较后来的政治中心。",
+          "continent": "southamerica",
+          "sites": [
+            "1269",
+            "330"
+          ]
+        },
+        {
+          "id": "sa-inca",
+          "title": "沿海王国与印加道路网络",
+          "date": "约9—16世纪",
+          "question": "地形与道路怎样影响政治整合？",
+          "summary": "昌昌呈现奇穆的城市组织；库斯科、马丘比丘和安第斯道路则连接印加权力与山地工程。印加扩张吸收了更早的社会与基础设施。",
+          "next": "征服之后，旧有城市和交通网络经历新的权力安排。",
+          "continent": "southamerica",
+          "sites": [
+            "366",
+            "273",
+            "274",
+            "1459"
+          ]
+        },
+        {
+          "id": "sa-colonial",
+          "title": "殖民城市、矿业与大西洋联系",
+          "date": "16—18世纪",
+          "question": "港口、矿山与城市怎样构成一个经济体系？",
+          "summary": "殖民经济把安第斯白银、巴西黄金和大西洋港口联系起来。城市财富的建筑表现，需要与原住民和被奴役非洲人的劳动经历一同阅读。",
+          "next": "传教聚落提供另一种观察殖民制度与地方社会的尺度。",
+          "continent": "southamerica",
+          "sites": [
+            "285",
+            "420",
+            "309",
+            "124"
+          ]
+        },
+        {
+          "id": "sa-missions",
+          "title": "瓜拉尼地区的传教聚落",
+          "date": "17—18世纪",
+          "question": "传教制度怎样改变聚落与劳动？",
+          "summary": "耶稣会传教聚落结合教堂、广场、居住与生产空间。其遗址可用于讨论瓜拉尼社会的经历、宗教转变和殖民秩序。",
+          "next": "进入19世纪后，港口和工业生产形成新的全球联系。",
+          "continent": "southamerica",
+          "sites": [
+            "275"
+          ]
+        },
+        {
+          "id": "sa-modern",
+          "title": "港口、工业与现代首都",
+          "date": "19—20世纪",
+          "question": "全球贸易与国家建设如何改变城市？",
+          "summary": "瓦尔帕莱索与弗赖本托斯呈现航运、食品工业和世界市场的联系；巴西利亚则将现代规划用于新的国家首都。三者体现不同的现代化路径。",
+          "next": "把规划意图、生产设施与今天的城市使用对照。",
+          "continent": "southamerica",
+          "sites": [
+            "959",
+            "1464",
+            "445"
+          ]
+        },
+        {
+          "id": "oc-land",
+          "title": "原住民土地知识与食物生产",
+          "date": "史前至今，各地年代不同",
+          "question": "人们怎样长期管理土地与水？",
+          "summary": "卡卡杜岩画、布吉必姆水产养殖系统与库克早期农业，呈现不同地区持续发展的知识与技术。原住民文化不是只属于过去的遗迹。",
+          "next": "海岛上的仪式中心连接航海、权力与社会记忆。",
+          "continent": "oceania",
+          "sites": [
+            "147",
+            "1577",
+            "887"
+          ]
+        },
+        {
+          "id": "oc-islands",
+          "title": "海岛网络与仪式中心",
+          "date": "约10—17世纪，分地区观察",
+          "question": "海洋如何连接社会，而不仅是分隔陆地？",
+          "summary": "南马都尔、塔普塔普阿泰亚、拉帕努伊和罗伊·马塔遗址属于不同岛屿传统。石筑空间、航海联系与口述记忆提供理解太平洋社会的入口。",
+          "next": "欧洲殖民扩张带来新的劳动力制度、港口与权力关系。",
+          "continent": "oceania",
+          "sites": [
+            "1503",
+            "1529",
+            "715",
+            "1280"
+          ]
+        },
+        {
+          "id": "oc-colonial",
+          "title": "殖民劳役与港口社会",
+          "date": "18世纪末—19世纪",
+          "question": "殖民制度如何塑造聚落与劳动？",
+          "summary": "澳大利亚监狱遗址记录流放与强制劳动；莱武卡呈现太平洋港口的贸易和殖民行政。比较这些遗址时，也要观察当地社会的持续存在。",
+          "next": "20世纪的战争、核试验与公共建筑留下不同的现代遗产。",
+          "continent": "oceania",
+          "sites": [
+            "1306",
+            "1399"
+          ]
+        },
+        {
+          "id": "oc-modern",
+          "title": "核时代与现代公共文化",
+          "date": "1946—1973年及其后续影响",
+          "question": "技术与国家权力留下了什么公共记忆？",
+          "summary": "比基尼环礁记录冷战核试验及居民迁移；悉尼歌剧院呈现战后公共文化与建筑实验。它们提供不同尺度的20世纪历史入口。",
+          "next": "结合当地社区的叙述，继续理解遗产的当代意义。",
+          "continent": "oceania",
+          "sites": [
+            "1339",
+            "166"
           ]
         }
       ],
@@ -3492,6 +3684,728 @@
           "see": "对照影院、商业建筑、公共设施与本地街区，注意空间分配。",
           "relation": "时代见证",
           "question": "建筑创新与不平等的城市制度如何同时存在？"
+        },
+        {
+          "id": "158",
+          "country": "加拿大",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-land"
+          ],
+          "nameEn": "Head-Smashed-In Buffalo Jump",
+          "url": "https://whc.unesco.org/en/list/158/",
+          "designation": "UNESCO",
+          "name": "碎头野牛跳崖",
+          "city": "艾伯塔",
+          "period": "约6000年间持续使用",
+          "why": "地形、动物知识与集体协作共同支持平原狩猎。",
+          "see": "沿解说路线比较驱赶通道、崖缘与营地，不只看悬崖本身。",
+          "question": "公共建筑一定以城市和农业为前提吗？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1435",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-land"
+          ],
+          "nameEn": "Monumental Earthworks of Poverty Point",
+          "url": "https://whc.unesco.org/en/list/1435/",
+          "designation": "UNESCO",
+          "name": "波弗蒂角土方工程",
+          "city": "路易斯安那",
+          "period": "约3700—3100年前",
+          "why": "猎渔采集社会也能组织大型公共土方工程。",
+          "see": "从平面图与现场高差辨认同心土脊、土丘和中央广场。",
+          "question": "公共建筑一定以城市和农业为前提吗？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "414",
+          "country": "墨西哥",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City of Teotihuacan",
+          "url": "https://whc.unesco.org/en/list/414/",
+          "designation": "UNESCO",
+          "name": "特奥蒂瓦坎古城",
+          "city": "墨西哥谷地",
+          "period": "公元1—7世纪",
+          "why": "巨型轴线与公共建筑呈现中美洲早期大城市的组织。",
+          "see": "沿亡灵大道比较广场、金字塔与居住区的尺度。",
+          "question": "不同城市如何组织政治与宗教生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "64",
+          "country": "危地马拉",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Tikal National Park",
+          "url": "https://whc.unesco.org/en/list/64/",
+          "designation": "UNESCO",
+          "name": "蒂卡尔国家公园",
+          "city": "佩滕",
+          "period": "前6世纪—公元10世纪",
+          "why": "神庙、宫殿与周围居住遗迹呈现玛雅城市的空间层次。",
+          "see": "把大广场与周边建筑群一起看，留意道路与高差。",
+          "question": "不同城市如何组织政治与宗教生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "411",
+          "country": "墨西哥",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City and National Park of Palenque",
+          "url": "https://whc.unesco.org/en/list/411/",
+          "designation": "UNESCO",
+          "name": "帕伦克古城",
+          "city": "恰帕斯",
+          "period": "鼎盛于公元500—700年",
+          "why": "建筑、浮雕与文字将玛雅王权和宗教叙事联系起来。",
+          "see": "对照宫殿、铭文神庙与浮雕，区分建筑空间和文字记忆。",
+          "question": "不同城市如何组织政治与宗教生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "483",
+          "country": "墨西哥",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City of Chichen-Itza",
+          "url": "https://whc.unesco.org/en/list/483/",
+          "designation": "UNESCO",
+          "name": "奇琴伊察",
+          "city": "尤卡坦",
+          "period": "主要观察公元9—13世纪",
+          "why": "城市建筑记录尤卡坦与墨西哥中部的文化联系。",
+          "see": "比较库库尔坎金字塔、武士神庙与天文台的形态和功能。",
+          "question": "不同城市如何组织政治与宗教生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "353",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Chaco Culture",
+          "url": "https://whc.unesco.org/en/list/353/",
+          "designation": "UNESCO",
+          "name": "查科文化遗址",
+          "city": "新墨西哥",
+          "period": "中心活动约850—1250年",
+          "why": "大型建筑与区域联系让普韦布洛社会的组织方式变得可见。",
+          "see": "对照大屋、仪式空间与道路，结合展览理解周边聚落。",
+          "question": "聚落怎样组织资源、仪式与区域联系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "27",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Mesa Verde National Park",
+          "url": "https://whc.unesco.org/en/list/27/",
+          "designation": "UNESCO",
+          "name": "梅萨维德国家公园",
+          "city": "科罗拉多",
+          "period": "主要观察公元6—13世纪",
+          "why": "台地与崖壁住宅展示普韦布洛人不同的居住布局。",
+          "see": "比较台地聚落与崖居，观察储存、居住和仪式空间。",
+          "question": "聚落怎样组织资源、仪式与区域联系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "198",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Cahokia Mounds State Historic Site",
+          "url": "https://whc.unesco.org/en/list/198/",
+          "designation": "UNESCO",
+          "name": "卡霍基亚土丘遗址",
+          "city": "伊利诺伊",
+          "period": "约800—1400年",
+          "why": "土丘与广场构成密西西比文化的重要政治和仪式中心。",
+          "see": "比较僧侣丘与广场尺度，并查看周围聚落分布图。",
+          "question": "聚落怎样组织资源、仪式与区域联系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "204",
+          "country": "古巴",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-colonial"
+          ],
+          "nameEn": "Old Havana and its Fortification System",
+          "url": "https://whc.unesco.org/en/list/204/",
+          "designation": "UNESCO",
+          "name": "哈瓦那老城及其防御工事",
+          "city": "哈瓦那",
+          "period": "16世纪起",
+          "why": "港口、防御工事与城市住宅联系西班牙殖民航运。",
+          "see": "对照港口入口、城堡与街区院落，观察防御和日常生活。",
+          "question": "殖民制度如何进入城市与日常生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1466",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-colonial"
+          ],
+          "nameEn": "San Antonio Missions",
+          "url": "https://whc.unesco.org/en/list/1466/",
+          "designation": "UNESCO",
+          "name": "圣安东尼奥传教区",
+          "city": "得克萨斯",
+          "period": "18世纪",
+          "why": "传教区结合宗教、农业与殖民边疆管理。",
+          "see": "除教堂外，也看灌溉渠道、耕地和居住空间。",
+          "question": "殖民制度如何进入城市与日常生活？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "78",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-republic"
+          ],
+          "nameEn": "Independence Hall",
+          "url": "https://whc.unesco.org/en/list/78/",
+          "designation": "UNESCO",
+          "name": "独立大厅",
+          "city": "费城",
+          "period": "1776年、1787年",
+          "why": "建国文件的讨论与签署把政治理念联系到具体空间。",
+          "see": "结合议事厅和展览，区分独立宣言与宪法的历史情境。",
+          "question": "自由的政治理念如何成为公共记忆？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "307",
+          "country": "美国",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-republic"
+          ],
+          "nameEn": "Statue of Liberty",
+          "url": "https://whc.unesco.org/en/list/307/",
+          "designation": "UNESCO",
+          "name": "自由女神像",
+          "city": "纽约港",
+          "period": "1886年落成",
+          "why": "法国赠予美国的纪念物，后来与移民抵达的记忆紧密相连。",
+          "see": "对照雕像、港口位置与博物馆展览，观察象征意义如何变化。",
+          "question": "自由的政治理念如何成为公共记忆？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1269",
+          "country": "秘鲁",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-early"
+          ],
+          "nameEn": "Sacred City of Caral-Supe",
+          "url": "https://whc.unesco.org/en/list/1269/",
+          "designation": "UNESCO",
+          "name": "卡拉尔—苏佩圣城",
+          "city": "苏佩河谷",
+          "period": "约5000年前",
+          "why": "大型台地与下沉广场展示早期安第斯社会的公共空间。",
+          "see": "比较台地、圆形广场和住宅的位置，观察河谷环境。",
+          "question": "城市与宗教中心怎样组织人群？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "330",
+          "country": "秘鲁",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-early"
+          ],
+          "nameEn": "Chavin (Archaeological Site)",
+          "url": "https://whc.unesco.org/en/list/330/",
+          "designation": "UNESCO",
+          "name": "查文考古遗址",
+          "city": "安第斯高地",
+          "period": "约前1500—前300年",
+          "why": "宗教建筑与石雕反映早期高地仪式中心的影响。",
+          "see": "观察平台、广场和石刻；地下空间按现场开放条件参观。",
+          "question": "城市与宗教中心怎样组织人群？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "366",
+          "country": "秘鲁",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Chan Chan Archaeological Zone",
+          "url": "https://whc.unesco.org/en/list/366/",
+          "designation": "UNESCO",
+          "name": "昌昌考古区",
+          "city": "特鲁希略附近",
+          "period": "主要观察奇穆王国，至15世纪",
+          "why": "土筑宫城的分区表现沿海王国的社会与政治组织。",
+          "see": "沿开放路线辨认院落、储存区与浮雕墙面。",
+          "question": "地形与道路怎样影响政治整合？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "273",
+          "country": "秘鲁",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "City of Cuzco",
+          "url": "https://whc.unesco.org/en/list/273/",
+          "designation": "UNESCO",
+          "name": "库斯科城",
+          "city": "库斯科",
+          "period": "印加时期与16世纪后",
+          "why": "印加城市结构与殖民建筑叠加，留下征服后的空间变化。",
+          "see": "对照石墙、街巷和建于旧址上的教堂。",
+          "question": "地形与道路怎样影响政治整合？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "274",
+          "country": "秘鲁",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Historic Sanctuary of Machu Picchu",
+          "url": "https://whc.unesco.org/en/list/274/",
+          "designation": "UNESCO",
+          "name": "马丘比丘历史保护区",
+          "city": "安第斯山地",
+          "period": "15世纪印加时期",
+          "why": "梯田、建筑与山体结合，体现印加山地工程。",
+          "see": "沿指定路线比较梯田、排水与建筑分区，而不只看全景。",
+          "question": "地形与道路怎样影响政治整合？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1459",
+          "country": "秘鲁 / 智利 / 厄瓜多尔 / 哥伦比亚 / 阿根廷 / 玻利维亚",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Qhapaq Ñan, Andean Road System",
+          "url": "https://whc.unesco.org/en/list/1459/",
+          "designation": "UNESCO",
+          "name": "卡帕克南：安第斯道路系统",
+          "city": "跨安第斯地区",
+          "period": "15世纪扩展至高峰，沿用更早道路",
+          "why": "跨国系列遗产记录道路、住宿和储存设施构成的联系网络。",
+          "see": "选择一个可访问路段，结合驿站与地形理解运输条件。",
+          "question": "地形与道路怎样影响政治整合？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "285",
+          "country": "哥伦比亚",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Port, Fortresses and Group of Monuments, Cartagena",
+          "url": "https://whc.unesco.org/en/list/285/",
+          "designation": "UNESCO",
+          "name": "卡塔赫纳港口、要塞和古迹群",
+          "city": "卡塔赫纳",
+          "period": "16—18世纪",
+          "why": "海湾防御与城市分区体现殖民港口的组织。",
+          "see": "对照城墙、港湾和不同街区，观察防御与社会空间。",
+          "question": "港口、矿山与城市怎样构成一个经济体系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "420",
+          "country": "玻利维亚",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "City of Potosí",
+          "url": "https://whc.unesco.org/en/list/420/",
+          "designation": "UNESCO",
+          "name": "波托西城",
+          "city": "波托西",
+          "period": "16世纪起",
+          "why": "矿山、水利与铸币设施把白银生产连接到殖民城市。",
+          "see": "结合铸币厂展览、城市与矿山景观理解生产链。",
+          "question": "港口、矿山与城市怎样构成一个经济体系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "309",
+          "country": "巴西",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Historic Centre of Salvador de Bahia",
+          "url": "https://whc.unesco.org/en/list/309/",
+          "designation": "UNESCO",
+          "name": "萨尔瓦多历史中心",
+          "city": "巴伊亚州",
+          "period": "1549年起；殖民首都至1763年",
+          "why": "港口城市的建筑联系欧洲、非洲与美洲原住民的历史。",
+          "see": "把教堂、住宅和港口空间与奴役制度相关展览对照。",
+          "question": "港口、矿山与城市怎样构成一个经济体系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "124",
+          "country": "巴西",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Historic Town of Ouro Preto",
+          "url": "https://whc.unesco.org/en/list/124/",
+          "designation": "UNESCO",
+          "name": "欧鲁普雷图历史城镇",
+          "city": "米纳斯吉拉斯",
+          "period": "17世纪末—19世纪",
+          "why": "黄金开采积累的财富体现在山城与宗教建筑中。",
+          "see": "观察坡地街巷、教堂和喷泉，联系矿业经济背景。",
+          "question": "港口、矿山与城市怎样构成一个经济体系？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "275",
+          "country": "巴西 / 阿根廷",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-missions"
+          ],
+          "nameEn": "Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil)",
+          "url": "https://whc.unesco.org/en/list/275/",
+          "designation": "UNESCO",
+          "name": "瓜拉尼人的耶稣会传教遗址",
+          "city": "巴西南部与阿根廷东北部",
+          "period": "17—18世纪",
+          "why": "传教聚落的布局记录宗教制度与瓜拉尼地区社会的接触。",
+          "see": "比较教堂、广场与住宅遗迹，不把遗址只当作教堂建筑。",
+          "question": "传教制度怎样改变聚落与劳动？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "959",
+          "country": "智利",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Historic Quarter of the Seaport City of Valparaíso",
+          "url": "https://whc.unesco.org/en/list/959/",
+          "designation": "UNESCO",
+          "name": "瓦尔帕莱索海港城市历史区",
+          "city": "瓦尔帕莱索",
+          "period": "主要观察19世纪",
+          "why": "港口发展与陡坡地形形成独特的城市交通和街区。",
+          "see": "比较平地街网、山坡住宅和历史升降设施。",
+          "question": "全球贸易与国家建设如何改变城市？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1464",
+          "country": "乌拉圭",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Fray Bentos Industrial Landscape",
+          "url": "https://whc.unesco.org/en/list/1464/",
+          "designation": "UNESCO",
+          "name": "弗赖本托斯工业景观",
+          "city": "乌拉圭河畔",
+          "period": "1859年起；19—20世纪",
+          "why": "肉类加工与运输设施记录南美生产和海外市场的联系。",
+          "see": "按生产流程看厂房、设备、码头与工人居住区。",
+          "question": "全球贸易与国家建设如何改变城市？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "445",
+          "country": "巴西",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Brasilia",
+          "url": "https://whc.unesco.org/en/list/445/",
+          "designation": "UNESCO",
+          "name": "巴西利亚",
+          "city": "巴西利亚",
+          "period": "1956年起规划建设；1960年成为首都",
+          "why": "新的国家首都把现代主义建筑和整体规划结合起来。",
+          "see": "比较行政轴线、公共建筑和居住区的实际步行体验。",
+          "question": "全球贸易与国家建设如何改变城市？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "147",
+          "country": "澳大利亚",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Kakadu National Park",
+          "url": "https://whc.unesco.org/en/list/147/",
+          "designation": "UNESCO",
+          "name": "卡卡杜国家公园",
+          "city": "北领地",
+          "period": "数万年的人类活动至今",
+          "why": "岩画与考古遗迹连接长期土地知识和仍在延续的文化。",
+          "see": "沿开放岩画步道阅读当地原住民的解说，观察环境与图像。",
+          "question": "人们怎样长期管理土地与水？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1577",
+          "country": "澳大利亚",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Budj Bim Cultural Landscape",
+          "url": "https://whc.unesco.org/en/list/1577/",
+          "designation": "UNESCO",
+          "name": "布吉必姆文化景观",
+          "city": "维多利亚州",
+          "period": "约6000年的水产养殖传统",
+          "why": "贡迪杰马拉人的渠道与堰坝体现主动管理食物资源的技术。",
+          "see": "跟随当地导览理解水流、鳗鱼捕获设施与熔岩地形。",
+          "question": "人们怎样长期管理土地与水？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "887",
+          "country": "巴布亚新几内亚",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Kuk Early Agricultural Site",
+          "url": "https://whc.unesco.org/en/list/887/",
+          "designation": "UNESCO",
+          "name": "库克早期农业遗址",
+          "city": "新几内亚高地",
+          "period": "约7000年；可能更早",
+          "why": "湿地改造、种植土丘与排水沟记录农业技术的长期变化。",
+          "see": "结合解说和考古图理解地形，避免把普通沟渠直接认作古代遗迹。",
+          "question": "人们怎样长期管理土地与水？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1503",
+          "country": "密克罗尼西亚联邦",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Nan Madol: Ceremonial Centre of Eastern Micronesia",
+          "url": "https://whc.unesco.org/en/list/1503/",
+          "designation": "UNESCO",
+          "name": "南马都尔",
+          "city": "波纳佩岛",
+          "period": "主要建造于1200—1500年",
+          "why": "人工岛与巨石建筑呈现绍德雷尔王朝的仪式与权力组织。",
+          "see": "观察玄武岩砌筑、人工岛分区与水道联系。",
+          "question": "海洋如何连接社会，而不仅是分隔陆地？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1529",
+          "country": "法国",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Taputapuātea",
+          "url": "https://whc.unesco.org/en/list/1529/",
+          "designation": "UNESCO",
+          "name": "塔普塔普阿泰亚",
+          "city": "法属波利尼西亚 · 赖阿特阿岛",
+          "period": "约千年的马奥希文化传统",
+          "why": "祭祀平台与海洋景观连接波利尼西亚的仪式和区域交往。",
+          "see": "对照不同祭祀平台、海岸与泻湖，阅读当地解释。",
+          "question": "海洋如何连接社会，而不仅是分隔陆地？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "715",
+          "country": "智利",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Rapa Nui National Park",
+          "url": "https://whc.unesco.org/en/list/715/",
+          "designation": "UNESCO",
+          "name": "拉帕努伊国家公园",
+          "city": "拉帕努伊岛 · 波利尼西亚",
+          "period": "主要观察10—16世纪纪念性建筑",
+          "why": "摩艾石像与祭台呈现波利尼西亚岛屿社会的纪念传统。",
+          "see": "比较采石场、石像与祭台，区分制作地点和竖立地点。",
+          "question": "海洋如何连接社会，而不仅是分隔陆地？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1280",
+          "country": "瓦努阿图",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Chief Roi Mata’s Domain",
+          "url": "https://whc.unesco.org/en/list/1280/",
+          "designation": "UNESCO",
+          "name": "罗伊·马塔酋长领地",
+          "city": "埃法特、莱莱帕与阿尔托克",
+          "period": "17世纪初及延续的口述记忆",
+          "why": "居所、死亡地点与墓地把地方口述传统联系到景观。",
+          "see": "结合当地讲述理解三处地点的关系与文化禁忌。",
+          "question": "海洋如何连接社会，而不仅是分隔陆地？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1306",
+          "country": "澳大利亚",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-colonial"
+          ],
+          "nameEn": "Australian Convict Sites",
+          "url": "https://whc.unesco.org/en/list/1306/",
+          "designation": "UNESCO",
+          "name": "澳大利亚监狱遗址",
+          "city": "跨州及诺福克岛",
+          "period": "18—19世纪",
+          "why": "流放与强制劳动参与塑造殖民聚落和基础设施。",
+          "see": "选择一处遗址，对照牢房、劳动空间与管理设施。",
+          "question": "殖民制度如何塑造聚落与劳动？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1399",
+          "country": "斐济",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-colonial"
+          ],
+          "nameEn": "Levuka Historical Port Town",
+          "url": "https://whc.unesco.org/en/list/1399/",
+          "designation": "UNESCO",
+          "name": "莱武卡历史港口城镇",
+          "city": "奥瓦劳岛",
+          "period": "19世纪",
+          "why": "海滨街区记录贸易、殖民行政与当地社会的共同作用。",
+          "see": "沿海滨比较仓库、商铺与周边村落的空间关系。",
+          "question": "殖民制度如何塑造聚落与劳动？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "1339",
+          "country": "马绍尔群岛",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-modern"
+          ],
+          "nameEn": "Bikini Atoll Nuclear Test Site",
+          "url": "https://whc.unesco.org/en/list/1339/",
+          "designation": "UNESCO",
+          "name": "比基尼环礁核试验遗址",
+          "city": "比基尼环礁",
+          "period": "1946—1958年核试验时期",
+          "why": "试验遗存与居民迁移将冷战技术史连接到当地生活。",
+          "see": "先结合档案与展览理解遗址；现场访问受专门安排与条件限制。",
+          "question": "技术与国家权力留下了什么公共记忆？",
+          "relation": "历史关联"
+        },
+        {
+          "id": "166",
+          "country": "澳大利亚",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-modern"
+          ],
+          "nameEn": "Sydney Opera House",
+          "url": "https://whc.unesco.org/en/list/166/",
+          "designation": "UNESCO",
+          "name": "悉尼歌剧院",
+          "city": "悉尼港",
+          "period": "1957年方案竞赛；1973年落成",
+          "why": "建筑与结构实验形成战后公共文化的重要地标。",
+          "see": "比较屋顶结构、平台与港口环境，再看内部表演空间。",
+          "question": "技术与国家权力留下了什么公共记忆？",
+          "relation": "历史关联"
         }
       ]
     },
@@ -3826,6 +4740,198 @@
           "continent": "africa",
           "sites": [
             "916"
+          ]
+        },
+        {
+          "id": "na-land",
+          "title": "Land knowledge and early public works",
+          "date": "Several millennia ago onwards; regional variation",
+          "question": "Do public works always require cities and farming?",
+          "summary": "Collective hunting on the plains and earthworks in the Mississippi valley reveal different forms of land use and cooperation, not successive steps towards one social model.",
+          "next": "Next, explore the emergence of cities and regional networks.",
+          "continent": "north",
+          "sites": [
+            "158",
+            "1435"
+          ]
+        },
+        {
+          "id": "na-meso",
+          "title": "Mesoamerican cities and Maya centres",
+          "date": "6th century BCE–16th century CE; regional histories",
+          "question": "How did different cities organise political and religious life?",
+          "summary": "Teotihuacan and Maya cities followed different trajectories. Plazas, temples, palaces and inscriptions offer evidence of urban authority, exchange and local traditions.",
+          "next": "Compare these cities with Pueblo settlements and Mississippi valley centres.",
+          "continent": "north",
+          "sites": [
+            "414",
+            "64",
+            "411",
+            "483"
+          ]
+        },
+        {
+          "id": "na-networks",
+          "title": "Pueblo settlements and the Mississippi valley",
+          "date": "c. 6th–15th centuries",
+          "question": "How did settlements organise resources, ceremonies and regional ties?",
+          "summary": "Pueblo architecture in the Southwest and the mound centre at Cahokia belonged to different environments and traditions. Comparing their spatial organisation does not imply a shared empire.",
+          "next": "Next, examine colonial networks and changes in local societies.",
+          "continent": "north",
+          "sites": [
+            "353",
+            "27",
+            "198"
+          ]
+        },
+        {
+          "id": "na-colonial",
+          "title": "Colonial ports and mission frontiers",
+          "date": "16th–18th centuries",
+          "question": "How did colonial institutions shape cities and daily life?",
+          "summary": "Caribbean ports served imperial shipping while frontier missions organised religion, production and settlement. Cultural exchange in these buildings must be read alongside colonial rule and coercion.",
+          "next": "Independence changed political institutions while migration continued to reshape society.",
+          "continent": "north",
+          "sites": [
+            "204",
+            "1466"
+          ]
+        },
+        {
+          "id": "na-republic",
+          "title": "Independence, republics and migration",
+          "date": "From 1776; 19th-century migration memory",
+          "question": "How do political ideals of liberty become public memory?",
+          "summary": "Independence Hall and the Statue of Liberty provide two US-focused threads: state formation and a transatlantic public symbol. They do not stand for every North American independence history.",
+          "next": "Compare public monuments with the experiences of different communities in local museums.",
+          "continent": "north",
+          "sites": [
+            "78",
+            "307"
+          ]
+        },
+        {
+          "id": "sa-early",
+          "title": "Early Andean centres and sacred spaces",
+          "date": "c. 3000–300 BCE",
+          "question": "How did urban and religious centres organise people?",
+          "summary": "Caral’s platform complexes and Chavin’s ceremonial spaces belong to different periods. They reveal complex Andean histories long before the Inca.",
+          "next": "Compare later political centres along the coast and in the highlands.",
+          "continent": "southamerica",
+          "sites": [
+            "1269",
+            "330"
+          ]
+        },
+        {
+          "id": "sa-inca",
+          "title": "Coastal kingdoms and Inca road networks",
+          "date": "c. 9th–16th centuries",
+          "question": "How did terrain and roads shape political integration?",
+          "summary": "Chan Chan reveals Chimu urban organisation; Cuzco, Machu Picchu and the Andean road system connect Inca authority with mountain engineering. Inca expansion incorporated earlier societies and infrastructure.",
+          "next": "Conquest brought new arrangements of power to existing cities and networks.",
+          "continent": "southamerica",
+          "sites": [
+            "366",
+            "273",
+            "274",
+            "1459"
+          ]
+        },
+        {
+          "id": "sa-colonial",
+          "title": "Colonial cities, mining and Atlantic connections",
+          "date": "16th–18th centuries",
+          "question": "How did ports, mines and cities form an economic system?",
+          "summary": "Colonial economies connected Andean silver, Brazilian gold and Atlantic ports. Buildings expressing urban wealth should be read alongside Indigenous labour and the experiences of enslaved Africans.",
+          "next": "Mission settlements offer another scale for examining colonial institutions and local societies.",
+          "continent": "southamerica",
+          "sites": [
+            "285",
+            "420",
+            "309",
+            "124"
+          ]
+        },
+        {
+          "id": "sa-missions",
+          "title": "Mission settlements in Guarani lands",
+          "date": "17th–18th centuries",
+          "question": "How did mission institutions reshape settlements and work?",
+          "summary": "Jesuit settlements combined churches, plazas, housing and production. Their remains offer a way to discuss Guarani experiences, religious change and colonial order.",
+          "next": "In the 19th century, ports and industry formed new global connections.",
+          "continent": "southamerica",
+          "sites": [
+            "275"
+          ]
+        },
+        {
+          "id": "sa-modern",
+          "title": "Ports, industry and a modern capital",
+          "date": "19th–20th centuries",
+          "question": "How did global trade and state-building change cities?",
+          "summary": "Valparaiso and Fray Bentos connect shipping, food production and world markets; Brasilia applies modern planning to a new national capital. They represent different paths of modernisation.",
+          "next": "Compare design intentions and industrial facilities with how cities are used today.",
+          "continent": "southamerica",
+          "sites": [
+            "959",
+            "1464",
+            "445"
+          ]
+        },
+        {
+          "id": "oc-land",
+          "title": "Indigenous land knowledge and food production",
+          "date": "Deep history to the present; regional chronologies",
+          "question": "How have communities managed land and water over time?",
+          "summary": "Kakadu rock art, Budj Bim aquaculture and early agriculture at Kuk reveal evolving knowledge and technologies in different regions. Indigenous cultures are living traditions, not simply remains of the past.",
+          "next": "Island ceremonial centres connect seafaring, authority and social memory.",
+          "continent": "oceania",
+          "sites": [
+            "147",
+            "1577",
+            "887"
+          ]
+        },
+        {
+          "id": "oc-islands",
+          "title": "Island networks and ceremonial centres",
+          "date": "c. 10th–17th centuries; regional histories",
+          "question": "How did the ocean connect societies rather than simply divide land?",
+          "summary": "Nan Madol, Taputapuatea, Rapa Nui and Roi Mata’s sites belong to distinct island traditions. Stone-built spaces, maritime connections and oral memory offer ways into Pacific histories.",
+          "next": "European colonial expansion introduced new labour systems, ports and power relations.",
+          "continent": "oceania",
+          "sites": [
+            "1503",
+            "1529",
+            "715",
+            "1280"
+          ]
+        },
+        {
+          "id": "oc-colonial",
+          "title": "Colonial labour and port societies",
+          "date": "Late 18th–19th centuries",
+          "question": "How did colonial institutions shape settlement and labour?",
+          "summary": "Australian convict sites record transportation and forced labour; Levuka reveals trade and colonial administration in a Pacific port. Local societies remained active within these changing settings.",
+          "next": "War, nuclear testing and public architecture left contrasting modern legacies.",
+          "continent": "oceania",
+          "sites": [
+            "1306",
+            "1399"
+          ]
+        },
+        {
+          "id": "oc-modern",
+          "title": "The nuclear age and modern public culture",
+          "date": "1946–1973 and their continuing legacies",
+          "question": "What public memories have technology and state power left?",
+          "summary": "Bikini records Cold War nuclear testing and displacement; Sydney Opera House reveals postwar public culture and architectural experimentation. They offer contrasting entry points into 20th-century history.",
+          "next": "Continue with local community accounts to understand these sites’ present significance.",
+          "continent": "oceania",
+          "sites": [
+            "1339",
+            "166"
           ]
         }
       ],
@@ -6983,6 +8089,728 @@
           "see": "Compare cinemas, commercial buildings, public facilities and indigenous neighbourhoods through spatial allocation.",
           "relation": "Evidence of the period",
           "question": "How could architectural innovation coexist with unequal urban institutions?"
+        },
+        {
+          "id": "158",
+          "country": "Canada",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-land"
+          ],
+          "nameEn": "Head-Smashed-In Buffalo Jump",
+          "url": "https://whc.unesco.org/en/list/158/",
+          "designation": "UNESCO",
+          "name": "Head-Smashed-In Buffalo Jump",
+          "city": "Alberta",
+          "period": "Used across roughly 6,000 years",
+          "why": "Terrain, animal knowledge and collective coordination supported plains hunting.",
+          "see": "Compare drive lanes, the cliff edge and camp through the interpretive route.",
+          "question": "Do public works always require cities and farming?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1435",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-land"
+          ],
+          "nameEn": "Monumental Earthworks of Poverty Point",
+          "url": "https://whc.unesco.org/en/list/1435/",
+          "designation": "UNESCO",
+          "name": "Monumental Earthworks of Poverty Point",
+          "city": "Louisiana",
+          "period": "c. 3,700–3,100 years ago",
+          "why": "A hunter-fisher-gatherer society organised monumental communal earthworks.",
+          "see": "Use the plan and changes in elevation to identify ridges, mounds and the plaza.",
+          "question": "Do public works always require cities and farming?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "414",
+          "country": "Mexico",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City of Teotihuacan",
+          "url": "https://whc.unesco.org/en/list/414/",
+          "designation": "UNESCO",
+          "name": "Pre-Hispanic City of Teotihuacan",
+          "city": "Valley of Mexico",
+          "period": "1st–7th centuries CE",
+          "why": "Monumental axes and public buildings reveal the organisation of a major early Mesoamerican city.",
+          "see": "Compare plazas, pyramids and residential areas along the Avenue of the Dead.",
+          "question": "How did different cities organise political and religious life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "64",
+          "country": "Guatemala",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Tikal National Park",
+          "url": "https://whc.unesco.org/en/list/64/",
+          "designation": "UNESCO",
+          "name": "Tikal National Park",
+          "city": "Peten",
+          "period": "6th century BCE–10th century CE",
+          "why": "Temples, palaces and surrounding dwellings reveal the spatial hierarchy of a Maya city.",
+          "see": "Read the Great Plaza alongside surrounding groups, routes and changes in elevation.",
+          "question": "How did different cities organise political and religious life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "411",
+          "country": "Mexico",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City and National Park of Palenque",
+          "url": "https://whc.unesco.org/en/list/411/",
+          "designation": "UNESCO",
+          "name": "Pre-Hispanic City and National Park of Palenque",
+          "city": "Chiapas",
+          "period": "Flourished c. 500–700 CE",
+          "why": "Buildings, reliefs and writing connect Maya kingship with religious narratives.",
+          "see": "Compare the palace, Temple of the Inscriptions and reliefs as architecture and recorded memory.",
+          "question": "How did different cities organise political and religious life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "483",
+          "country": "Mexico",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-meso"
+          ],
+          "nameEn": "Pre-Hispanic City of Chichen-Itza",
+          "url": "https://whc.unesco.org/en/list/483/",
+          "designation": "UNESCO",
+          "name": "Pre-Hispanic City of Chichen-Itza",
+          "city": "Yucatan",
+          "period": "Focus on c. 9th–13th centuries CE",
+          "why": "The city’s architecture records cultural connections between Yucatan and central Mexico.",
+          "see": "Compare El Castillo, the Temple of the Warriors and El Caracol in form and function.",
+          "question": "How did different cities organise political and religious life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "353",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Chaco Culture",
+          "url": "https://whc.unesco.org/en/list/353/",
+          "designation": "UNESCO",
+          "name": "Chaco Culture",
+          "city": "New Mexico",
+          "period": "Major centre c. 850–1250",
+          "why": "Large buildings and regional ties reveal ancestral Pueblo social organisation.",
+          "see": "Compare great houses, ceremonial spaces and roads with interpretations of surrounding settlements.",
+          "question": "How did settlements organise resources, ceremonies and regional ties?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "27",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Mesa Verde National Park",
+          "url": "https://whc.unesco.org/en/list/27/",
+          "designation": "UNESCO",
+          "name": "Mesa Verde National Park",
+          "city": "Colorado",
+          "period": "Focus on c. 6th–13th centuries CE",
+          "why": "Mesa-top and cliff dwellings reveal different ancestral Pueblo settlement arrangements.",
+          "see": "Compare mesa-top settlements and cliff dwellings, distinguishing storage, living and ceremonial spaces.",
+          "question": "How did settlements organise resources, ceremonies and regional ties?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "198",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-networks"
+          ],
+          "nameEn": "Cahokia Mounds State Historic Site",
+          "url": "https://whc.unesco.org/en/list/198/",
+          "designation": "UNESCO",
+          "name": "Cahokia Mounds State Historic Site",
+          "city": "Illinois",
+          "period": "c. 800–1400",
+          "why": "Mounds and plazas formed a major political and ceremonial centre of Mississippian culture.",
+          "see": "Compare Monks Mound with the plazas and maps of surrounding settlements.",
+          "question": "How did settlements organise resources, ceremonies and regional ties?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "204",
+          "country": "Cuba",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-colonial"
+          ],
+          "nameEn": "Old Havana and its Fortification System",
+          "url": "https://whc.unesco.org/en/list/204/",
+          "designation": "UNESCO",
+          "name": "Old Havana and its Fortification System",
+          "city": "Havana",
+          "period": "From the 16th century",
+          "why": "The harbour, fortifications and housing connect the city with Spanish colonial shipping.",
+          "see": "Compare the harbour entrance, forts and courtyards as spaces of defence and daily life.",
+          "question": "How did colonial institutions shape cities and daily life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1466",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-colonial"
+          ],
+          "nameEn": "San Antonio Missions",
+          "url": "https://whc.unesco.org/en/list/1466/",
+          "designation": "UNESCO",
+          "name": "San Antonio Missions",
+          "city": "Texas",
+          "period": "18th century",
+          "why": "Missions combined religion, agriculture and colonial frontier administration.",
+          "see": "Look beyond churches to irrigation channels, fields and residential spaces.",
+          "question": "How did colonial institutions shape cities and daily life?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "78",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-republic"
+          ],
+          "nameEn": "Independence Hall",
+          "url": "https://whc.unesco.org/en/list/78/",
+          "designation": "UNESCO",
+          "name": "Independence Hall",
+          "city": "Philadelphia",
+          "period": "1776 and 1787",
+          "why": "Debate and signing of founding documents connect political ideas with a specific setting.",
+          "see": "Use the assembly room and exhibits to distinguish the Declaration’s context from the Constitution’s.",
+          "question": "How do political ideals of liberty become public memory?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "307",
+          "country": "United States",
+          "continent": "north",
+          "eras": [],
+          "regionalChapters": [
+            "na-republic"
+          ],
+          "nameEn": "Statue of Liberty",
+          "url": "https://whc.unesco.org/en/list/307/",
+          "designation": "UNESCO",
+          "name": "Statue of Liberty",
+          "city": "New York Harbor",
+          "period": "Dedicated in 1886",
+          "why": "A French gift to the United States became closely associated with memories of immigration.",
+          "see": "Compare the statue, its harbour setting and museum displays to trace changing meanings.",
+          "question": "How do political ideals of liberty become public memory?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1269",
+          "country": "Peru",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-early"
+          ],
+          "nameEn": "Sacred City of Caral-Supe",
+          "url": "https://whc.unesco.org/en/list/1269/",
+          "designation": "UNESCO",
+          "name": "Sacred City of Caral-Supe",
+          "city": "Supe Valley",
+          "period": "Around 5,000 years ago",
+          "why": "Large platforms and sunken plazas reveal public spaces in early Andean society.",
+          "see": "Compare platforms, circular plazas and housing within the river-valley setting.",
+          "question": "How did urban and religious centres organise people?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "330",
+          "country": "Peru",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-early"
+          ],
+          "nameEn": "Chavin (Archaeological Site)",
+          "url": "https://whc.unesco.org/en/list/330/",
+          "designation": "UNESCO",
+          "name": "Chavin (Archaeological Site)",
+          "city": "Andean highlands",
+          "period": "c. 1500–300 BCE",
+          "why": "Religious buildings and stone carving reveal the influence of an early highland ceremonial centre.",
+          "see": "Observe platforms, plazas and carvings; enter internal passages only where access is permitted.",
+          "question": "How did urban and religious centres organise people?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "366",
+          "country": "Peru",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Chan Chan Archaeological Zone",
+          "url": "https://whc.unesco.org/en/list/366/",
+          "designation": "UNESCO",
+          "name": "Chan Chan Archaeological Zone",
+          "city": "Near Trujillo",
+          "period": "Chimu kingdom, through the 15th century",
+          "why": "Divisions within adobe compounds express the coastal kingdom’s social and political organisation.",
+          "see": "Identify courtyards, storage areas and decorated walls along the accessible route.",
+          "question": "How did terrain and roads shape political integration?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "273",
+          "country": "Peru",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "City of Cuzco",
+          "url": "https://whc.unesco.org/en/list/273/",
+          "designation": "UNESCO",
+          "name": "City of Cuzco",
+          "city": "Cuzco",
+          "period": "Inca period and after the 16th century",
+          "why": "Inca urban fabric and colonial construction record spatial changes after conquest.",
+          "see": "Compare masonry, streets and churches built over earlier structures.",
+          "question": "How did terrain and roads shape political integration?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "274",
+          "country": "Peru",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Historic Sanctuary of Machu Picchu",
+          "url": "https://whc.unesco.org/en/list/274/",
+          "designation": "UNESCO",
+          "name": "Historic Sanctuary of Machu Picchu",
+          "city": "Andean mountains",
+          "period": "15th-century Inca period",
+          "why": "Terraces, buildings and terrain reveal Inca mountain engineering.",
+          "see": "Follow the assigned route to compare terraces, drainage and built sectors, beyond the panoramic view.",
+          "question": "How did terrain and roads shape political integration?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1459",
+          "country": "Peru / Chile / Ecuador / Colombia / Argentina / Bolivia",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-inca"
+          ],
+          "nameEn": "Qhapaq Ñan, Andean Road System",
+          "url": "https://whc.unesco.org/en/list/1459/",
+          "designation": "UNESCO",
+          "name": "Qhapaq Ñan, Andean Road System",
+          "city": "Across the Andes",
+          "period": "Greatest extent in the 15th century; earlier routes incorporated",
+          "why": "The transnational property records connections formed by roads, accommodation and storage facilities.",
+          "see": "Choose an accessible section and examine facilities and terrain together.",
+          "question": "How did terrain and roads shape political integration?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "285",
+          "country": "Colombia",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Port, Fortresses and Group of Monuments, Cartagena",
+          "url": "https://whc.unesco.org/en/list/285/",
+          "designation": "UNESCO",
+          "name": "Port, Fortresses and Group of Monuments, Cartagena",
+          "city": "Cartagena",
+          "period": "16th–18th centuries",
+          "why": "Bay defences and urban districts reveal the organisation of a colonial port.",
+          "see": "Compare walls, the harbour and neighbourhoods as defensive and social spaces.",
+          "question": "How did ports, mines and cities form an economic system?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "420",
+          "country": "Bolivia",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "City of Potosí",
+          "url": "https://whc.unesco.org/en/list/420/",
+          "designation": "UNESCO",
+          "name": "City of Potosí",
+          "city": "Potosi",
+          "period": "From the 16th century",
+          "why": "Mines, waterworks and minting connected silver production with the colonial city.",
+          "see": "Use mint exhibits, the city and the mining landscape to understand the production chain.",
+          "question": "How did ports, mines and cities form an economic system?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "309",
+          "country": "Brazil",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Historic Centre of Salvador de Bahia",
+          "url": "https://whc.unesco.org/en/list/309/",
+          "designation": "UNESCO",
+          "name": "Historic Centre of Salvador de Bahia",
+          "city": "Bahia",
+          "period": "From 1549; colonial capital until 1763",
+          "why": "The port city’s buildings connect European, African and Indigenous American histories.",
+          "see": "Compare churches, housing and harbour spaces with exhibitions addressing slavery.",
+          "question": "How did ports, mines and cities form an economic system?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "124",
+          "country": "Brazil",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-colonial"
+          ],
+          "nameEn": "Historic Town of Ouro Preto",
+          "url": "https://whc.unesco.org/en/list/124/",
+          "designation": "UNESCO",
+          "name": "Historic Town of Ouro Preto",
+          "city": "Minas Gerais",
+          "period": "Late 17th–19th centuries",
+          "why": "Wealth from gold extraction is visible in the hillside town and its religious buildings.",
+          "see": "Read sloping streets, churches and fountains in the context of the mining economy.",
+          "question": "How did ports, mines and cities form an economic system?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "275",
+          "country": "Brazil / Argentina",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-missions"
+          ],
+          "nameEn": "Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil)",
+          "url": "https://whc.unesco.org/en/list/275/",
+          "designation": "UNESCO",
+          "name": "Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil)",
+          "city": "Southern Brazil and northeastern Argentina",
+          "period": "17th–18th centuries",
+          "why": "Mission plans record encounters between religious institutions and societies in Guarani lands.",
+          "see": "Compare churches, plazas and housing remains rather than treating each site simply as a church.",
+          "question": "How did mission institutions reshape settlements and work?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "959",
+          "country": "Chile",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Historic Quarter of the Seaport City of Valparaíso",
+          "url": "https://whc.unesco.org/en/list/959/",
+          "designation": "UNESCO",
+          "name": "Historic Quarter of the Seaport City of Valparaíso",
+          "city": "Valparaiso",
+          "period": "Focus on the 19th century",
+          "why": "Port growth and steep terrain shaped distinctive transport systems and neighbourhoods.",
+          "see": "Compare the flat street grid, hillside housing and historic lifts.",
+          "question": "How did global trade and state-building change cities?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1464",
+          "country": "Uruguay",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Fray Bentos Industrial Landscape",
+          "url": "https://whc.unesco.org/en/list/1464/",
+          "designation": "UNESCO",
+          "name": "Fray Bentos Industrial Landscape",
+          "city": "Uruguay River",
+          "period": "From 1859; 19th–20th centuries",
+          "why": "Meat-processing and transport facilities record links between South American production and overseas markets.",
+          "see": "Follow the production sequence through buildings, equipment, docks and workers’ housing.",
+          "question": "How did global trade and state-building change cities?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "445",
+          "country": "Brazil",
+          "continent": "southamerica",
+          "eras": [],
+          "regionalChapters": [
+            "sa-modern"
+          ],
+          "nameEn": "Brasilia",
+          "url": "https://whc.unesco.org/en/list/445/",
+          "designation": "UNESCO",
+          "name": "Brasilia",
+          "city": "Brasilia",
+          "period": "Built from 1956; capital from 1960",
+          "why": "The new national capital combined modernist architecture with comprehensive planning.",
+          "see": "Compare the monumental axis, public buildings and the experience of walking through residential areas.",
+          "question": "How did global trade and state-building change cities?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "147",
+          "country": "Australia",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Kakadu National Park",
+          "url": "https://whc.unesco.org/en/list/147/",
+          "designation": "UNESCO",
+          "name": "Kakadu National Park",
+          "city": "Northern Territory",
+          "period": "Human presence over tens of millennia to the present",
+          "why": "Rock art and archaeological remains connect long-term land knowledge with living cultures.",
+          "see": "Read Indigenous interpretation along open rock-art routes and relate images to their setting.",
+          "question": "How have communities managed land and water over time?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1577",
+          "country": "Australia",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Budj Bim Cultural Landscape",
+          "url": "https://whc.unesco.org/en/list/1577/",
+          "designation": "UNESCO",
+          "name": "Budj Bim Cultural Landscape",
+          "city": "Victoria",
+          "period": "An aquaculture tradition of roughly 6,000 years",
+          "why": "Gunditjmara channels and weirs reveal technologies for actively managing food resources.",
+          "see": "Use local guided interpretation to connect water flows, eel-harvesting structures and lava terrain.",
+          "question": "How have communities managed land and water over time?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "887",
+          "country": "Papua New Guinea",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-land"
+          ],
+          "nameEn": "Kuk Early Agricultural Site",
+          "url": "https://whc.unesco.org/en/list/887/",
+          "designation": "UNESCO",
+          "name": "Kuk Early Agricultural Site",
+          "city": "New Guinea highlands",
+          "period": "Around 7,000 years, possibly earlier",
+          "why": "Wetland modification, cultivation mounds and drainage channels record long-term agricultural change.",
+          "see": "Use interpretation and archaeological plans; do not assume every visible ditch is ancient.",
+          "question": "How have communities managed land and water over time?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1503",
+          "country": "Federated States of Micronesia",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Nan Madol: Ceremonial Centre of Eastern Micronesia",
+          "url": "https://whc.unesco.org/en/list/1503/",
+          "designation": "UNESCO",
+          "name": "Nan Madol: Ceremonial Centre of Eastern Micronesia",
+          "city": "Pohnpei",
+          "period": "Main construction c. 1200–1500",
+          "why": "Artificial islets and megalithic buildings reveal ceremonial and political organisation under the Saudeleur dynasty.",
+          "see": "Compare basalt construction, islet divisions and connecting waterways.",
+          "question": "How did the ocean connect societies rather than simply divide land?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1529",
+          "country": "France",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Taputapuātea",
+          "url": "https://whc.unesco.org/en/list/1529/",
+          "designation": "UNESCO",
+          "name": "Taputapuātea",
+          "city": "French Polynesia · Raiatea",
+          "period": "Around a millennium of Maohi cultural tradition",
+          "why": "Ceremonial platforms and the seascape connect Polynesian ritual life with regional exchange.",
+          "see": "Compare ceremonial platforms, the coast and lagoon through local interpretation.",
+          "question": "How did the ocean connect societies rather than simply divide land?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "715",
+          "country": "Chile",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Rapa Nui National Park",
+          "url": "https://whc.unesco.org/en/list/715/",
+          "designation": "UNESCO",
+          "name": "Rapa Nui National Park",
+          "city": "Rapa Nui · Polynesia",
+          "period": "Focus on 10th–16th-century monuments",
+          "why": "Moai and ceremonial platforms reveal a Polynesian island society’s monumental traditions.",
+          "see": "Compare the quarry, statues and platforms, distinguishing production from final placement.",
+          "question": "How did the ocean connect societies rather than simply divide land?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1280",
+          "country": "Vanuatu",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-islands"
+          ],
+          "nameEn": "Chief Roi Mata’s Domain",
+          "url": "https://whc.unesco.org/en/list/1280/",
+          "designation": "UNESCO",
+          "name": "Chief Roi Mata’s Domain",
+          "city": "Efate, Lelepa and Artok",
+          "period": "Early 17th century and continuing oral memory",
+          "why": "A residence, death site and burial place connect local oral traditions with the landscape.",
+          "see": "Use local accounts to understand relationships between the three places and cultural restrictions.",
+          "question": "How did the ocean connect societies rather than simply divide land?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1306",
+          "country": "Australia",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-colonial"
+          ],
+          "nameEn": "Australian Convict Sites",
+          "url": "https://whc.unesco.org/en/list/1306/",
+          "designation": "UNESCO",
+          "name": "Australian Convict Sites",
+          "city": "Multiple states and Norfolk Island",
+          "period": "18th–19th centuries",
+          "why": "Transportation and forced labour helped shape colonial settlements and infrastructure.",
+          "see": "Choose one property and compare cells, work spaces and administrative facilities.",
+          "question": "How did colonial institutions shape settlement and labour?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1399",
+          "country": "Fiji",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-colonial"
+          ],
+          "nameEn": "Levuka Historical Port Town",
+          "url": "https://whc.unesco.org/en/list/1399/",
+          "designation": "UNESCO",
+          "name": "Levuka Historical Port Town",
+          "city": "Ovalau",
+          "period": "19th century",
+          "why": "The waterfront records interactions between trade, colonial administration and local society.",
+          "see": "Compare warehouses, shops and neighbouring villages along the waterfront.",
+          "question": "How did colonial institutions shape settlement and labour?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "1339",
+          "country": "Marshall Islands",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-modern"
+          ],
+          "nameEn": "Bikini Atoll Nuclear Test Site",
+          "url": "https://whc.unesco.org/en/list/1339/",
+          "designation": "UNESCO",
+          "name": "Bikini Atoll Nuclear Test Site",
+          "city": "Bikini Atoll",
+          "period": "Nuclear-testing period, 1946–1958",
+          "why": "Test remains and displacement connect Cold War technology with local lives.",
+          "see": "Begin with archives and interpretation; on-site access depends on specialised arrangements and conditions.",
+          "question": "What public memories have technology and state power left?",
+          "relation": "Historical connection"
+        },
+        {
+          "id": "166",
+          "country": "Australia",
+          "continent": "oceania",
+          "eras": [],
+          "regionalChapters": [
+            "oc-modern"
+          ],
+          "nameEn": "Sydney Opera House",
+          "url": "https://whc.unesco.org/en/list/166/",
+          "designation": "UNESCO",
+          "name": "Sydney Opera House",
+          "city": "Sydney Harbour",
+          "period": "1957 design competition; opened in 1973",
+          "why": "Architectural and structural experimentation created a major postwar public cultural landmark.",
+          "see": "Compare roof structures, platforms and harbour setting before exploring performance interiors.",
+          "question": "What public memories have technology and state power left?",
+          "relation": "Historical connection"
         }
       ]
     }

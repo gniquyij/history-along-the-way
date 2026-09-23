@@ -4,9 +4,10 @@ import assert from 'node:assert/strict';
 const html=fs.readFileSync('dist/index.html','utf8'), elements=new Map();
 function element(){return {dataset:{},innerHTML:'',textContent:'',value:'',hidden:false,handlers:{},classList:{toggle(){}},setAttribute(){},addEventListener(k,v){this.handlers[k]=v;},close(){},showModal(){},click(){}};}
 for(const [,id]of html.matchAll(/id="([^"]+)"/g))elements.set(id,element());
+for(const id of ['country-tools','country','era-mobile','timeline','chapter','result-title','count','sites'])elements.set(id,element());
 const selectors=new Map(['aside','.workspace','.close'].map(x=>[x,element()]));
 const context=vm.createContext({document:{documentElement:{},querySelectorAll(){return [];},getElementById:id=>{assert(elements.has(id),`Missing DOM element: ${id}`);return elements.get(id);},querySelector:s=>selectors.get(s),addEventListener(){}},localStorage:{getItem(){return null;},setItem(){}},window:{scrollTo(){}},console});
-vm.runInContext(['data.js','content-en.js','i18n.js','app.js'].map(f=>fs.readFileSync('dist/'+f,'utf8')).join('\n'),context);
+vm.runInContext(['data.js','content-en.js','i18n.js','continent-template.js','app.js'].map(f=>fs.readFileSync('dist/'+f,'utf8')).join('\n'),context);
 const run=s=>vm.runInContext(s,context);
 run("navigateEra('industry')");
 elements.get('browse').onclick();elements.get('country').handlers.change({target:{value:'英国'}});
@@ -35,7 +36,7 @@ const beforeIds=run('JSON.stringify(visibleSites().map(s=>s.id))');
 elements.get('language').onclick();
 assert.equal(run('lang'),'en');assert.equal(context.document.documentElement.lang,'en');assert.equal(context.document.title,'History Along the Way');
 assert.equal(run('country'),'英国');assert.equal(run('selected'),'industry');assert.equal(run('mode'),'country');assert.equal(run('JSON.stringify(visibleSites().map(s=>s.id))'),beforeIds);
-assert(elements.get('country').innerHTML.includes('value="英国">United Kingdom'));
+assert(/value="英国"(?: selected)?>United Kingdom/.test(elements.get('country').innerHTML));
 assert(!/[\u3400-\u9fff]/.test(elements.get('sites').innerHTML),'Chinese leaked into English country cards');
 run("renderDetail('1517')");assert(elements.get('detail-body').innerHTML.includes('Macedonian, Roman and Christian'));assert(elements.get('detail-body').innerHTML.includes('我的笔记 / my note'));
 elements.get('detail-language').onclick();assert.equal(run('lang'),'zh');assert.equal(run('opened'),'1517');assert(elements.get('detail-body').innerHTML.includes('腓立比'));assert.equal(run("records['1517'].note"),'我的笔记 / my note');
@@ -46,3 +47,18 @@ assert.equal(run('new Set(PERIODS.flatMap(p=>p.eras)).size'),run('ERAS.length'))
 assert(elements.get('timeline').innerHTML.includes('Middle Ages'));assert(elements.get('era-mobile').innerHTML.includes('<optgroup'));
 run("navigateEra('late')");assert(elements.get('chapter').innerHTML.includes('Late Antiquity → Early Middle Ages'));
 console.log('Language switch passed: state and notes preserved, 126 complete English entries, 15 translated chapters, period groups and transition labels.');
+
+// Country browsing hides the full continent list and paginates only a selected country.
+run("mode='country';country='';render()");
+assert(!elements.get('sites').innerHTML.includes('class="site-card"'));
+run("country='意大利';render()");
+assert.equal((elements.get('sites').innerHTML.match(/class="site-card"/g)||[]).length,5);
+const firstPage=elements.get('sites').innerHTML;
+run("continentListState.get('europe').page=2;render()");
+assert.notEqual(elements.get('sites').innerHTML,firstPage);
+assert((elements.get('sites').innerHTML.match(/class="site-card"/g)||[]).length<=5);
+run("country='希腊';render()");
+assert.equal(run("continentListState.get('europe').page"),1);
+run("mode='era';selected='rome';render()");
+assert.equal((elements.get('sites').innerHTML.match(/class="site-card"/g)||[]).length,run('visibleSites().length'));
+console.log('Country pagination: 5 per page, country change resets page, continent overview hides cards, timeline remains complete.');
