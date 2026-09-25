@@ -67,7 +67,7 @@ $('home').addEventListener('click',()=>{view='europe';draw();});
 $('history').onclick=()=>{if(view==='continents'){continentMode='timeline';}else{view='europe';mode='era';render();}draw();};
 $('browse').onclick=()=>{if(view==='continents'){continentMode='country';}else{view='europe';mode='country';render();}draw();};
 $('journal').onclick=()=>{view='europe';mode='journal';country='';render();draw();};
-$('journal').addEventListener('click',draw);$('history').addEventListener('click',draw);$('browse').addEventListener('click',draw);$('detail').addEventListener('close',draw);
+$('journal').addEventListener('click',draw);$('history').addEventListener('click',draw);$('browse').addEventListener('click',draw);
 $('language').addEventListener('click',draw);$('detail-language').addEventListener('click',draw);
 window.atlasRoute={
  read(){return {view,region,chapter:REGIONAL_ATLASES[region]?.chapters[chapterSelection[region]||0]?.id,continentMode,selectedCountry};},

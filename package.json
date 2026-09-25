@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node scripts/serve.mjs",
-    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/content-en.js && node --check dist/i18n.js && node scripts/check-data.mjs && node scripts/check-navigation.mjs && node --check dist/analytics.js && node scripts/check-analytics.mjs && node --check dist/world.js && node scripts/check-africa.mjs && node --check dist/world-map.js && node --check dist/share.js && node --check dist/reuse.js && node --check dist/continent-template.js && node --check dist/country-map.js && node scripts/check-country-map.mjs && node --check dist/additional-atlases.js && node --check dist/regional-map.js && node scripts/check-additional-atlases.mjs",
+    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/content-en.js && node --check dist/i18n.js && node scripts/check-data.mjs && node scripts/check-navigation.mjs && node --check dist/analytics.js && node scripts/check-analytics.mjs && node --check dist/world.js && node scripts/check-africa.mjs && node --check dist/world-map.js && node --check dist/share.js && node --check dist/reuse.js && node --check dist/continent-template.js && node --check dist/country-map.js && node scripts/check-country-map.mjs && node --check dist/additional-atlases.js && node --check dist/regional-map.js && node scripts/check-additional-atlases.mjs && node scripts/check-map-view.mjs",
     "build": "node scripts/build-public-data.mjs"
   }
 }

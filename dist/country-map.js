@@ -2,9 +2,11 @@
 function countryMapHTML(sites, countryName='') {
  return `<section class="country-map-section" data-country-map data-site-ids="${sites.map(s=>s.id).join(',')}" data-country-name="${esc(countryName)}"><header><h3>${L('遗产分布','Heritage locations')}</h3><span>${countryName?L('点击地点查看详情','Select a location for details'):L(`${sites.length} 处世界遗产`,`${sites.length} World Heritage properties`)}</span></header><div class="country-map-surface" tabindex="0" role="group" aria-label="${L('遗产地图，可拖动；方向键平移，加减键缩放','Heritage map: drag or use arrow keys to pan; plus and minus to zoom')}"><svg class="country-map-svg" aria-hidden="true"></svg><div class="country-map-pins"></div><div class="country-map-controls"><button type="button" data-country-zoom="in" aria-label="${L('放大','Zoom in')}">+</button><button type="button" data-country-zoom="out" aria-label="${L('缩小','Zoom out')}">−</button><button type="button" data-country-zoom="reset">${L('适应范围','Fit locations')}</button></div></div><div class="country-map-selection" hidden></div><p class="country-map-caption"></p></section>`;
 }
+const countryMapViews = new Map();
 function mountCountryMap(host) {
  host.dataset.ready='true';
  const ids=host.dataset.siteIds.split(',').filter(Boolean), code=COUNTRY_MAP_DATA.countries[host.dataset.countryName];
+ const viewKey=JSON.stringify([code||host.dataset.countryName,[...ids].sort()]);
  const sites=ids.map(id=>SITES.find(s=>s.id===id)).filter(Boolean);
  // One representative, verified component per inscription, matching the list count.
  const points=sites.flatMap(s=>{
@@ -25,9 +27,13 @@ function mountCountryMap(host) {
   const ratio=surface.clientWidth/surface.clientHeight||2;
   let w=Math.max(9,(maxX-minX)*1.3),h=Math.max(7,(maxY-minY)*1.3);
   if(w/h<ratio)w=h*ratio;else h=w/ratio;
-  box={x:(minX+maxX-w)/2,y:(minY+maxY-h)/2,w,h};initial={...box};paint();
+  box={x:(minX+maxX-w)/2,y:(minY+maxY-h)/2,w,h};initial={...box};
+  const saved=countryMapViews.get(viewKey);
+  if(saved){const ratio=surface.clientWidth/surface.clientHeight||2;box={...saved,w:saved.h*ratio};box.x=saved.x+(saved.w-box.w)/2;}
+  paint();
  }
  function paint(){
+  countryMapViews.set(viewKey,{...box});
   svg.setAttribute('viewBox',`${box.x} ${box.y} ${box.w} ${box.h}`);
   svg.setAttribute('preserveAspectRatio','none');
   const width=surface.clientWidth,height=surface.clientHeight;let groups=[];
