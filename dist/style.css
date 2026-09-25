@@ -286,3 +286,17 @@ body:has(#analytics-notice:not([hidden])){padding-bottom:100px}
 .results:has(.heritage-list:empty){display:none}
 .country-controls{padding:0;margin:0 0 24px}
 .country-map-section>header h3{font-size:16px;font-weight:600;line-height:1.5}
+
+/* Shared reading section for heritage details in every continent. */
+.related-reading{margin:28px 0;padding-top:20px;border-top:1px solid #dcded7}
+.related-reading h3{margin:0 0 16px}
+.reading-list{list-style:none;padding:0;margin:0}
+.reading-list li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid #e3e3dc}
+.reading-list li:last-child{margin-bottom:0}
+.reading-list h4{font:inherit;font-weight:600;line-height:1.5;margin:0 0 6px}
+.reading-list h4 a{text-decoration:none}
+.reading-list h4 a:hover{text-decoration:underline}
+.reading-list p{margin:8px 0;line-height:1.65}
+.reading-list .reading-author,.reading-list .reading-rating,.reading-list .reading-credential,.reading-source-note{font-size:.875rem;color:#5b696d}
+.reading-credential a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.reading-source-note{margin:12px 0 0;line-height:1.6}

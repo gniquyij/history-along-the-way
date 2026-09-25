@@ -7,7 +7,7 @@ for(const [,id]of html.matchAll(/id="([^"]+)"/g))elements.set(id,element());
 for(const id of ['country-tools','country','era-mobile','timeline','chapter','result-title','count','sites'])elements.set(id,element());
 const selectors=new Map(['aside','.workspace','.close'].map(x=>[x,element()]));
 const context=vm.createContext({document:{documentElement:{},querySelectorAll(){return [];},getElementById:id=>{assert(elements.has(id),`Missing DOM element: ${id}`);return elements.get(id);},querySelector:s=>selectors.get(s),addEventListener(){}},localStorage:{getItem(){return null;},setItem(){}},window:{scrollTo(){}},console});
-vm.runInContext(['data.js','content-en.js','i18n.js','continent-template.js','app.js'].map(f=>fs.readFileSync('dist/'+f,'utf8')).join('\n'),context);
+vm.runInContext(['data.js','content-en.js','i18n.js','continent-template.js','reading.js','app.js'].map(f=>fs.readFileSync('dist/'+f,'utf8')).join('\n'),context);
 const run=s=>vm.runInContext(s,context);
 run("navigateEra('industry')");
 elements.get('browse').onclick();elements.get('country').handlers.change({target:{value:'英国'}});
@@ -62,3 +62,6 @@ assert.equal(run("continentListState.get('europe').page"),1);
 run("mode='era';selected='rome';render()");
 assert.equal((elements.get('sites').innerHTML.match(/class="site-card"/g)||[]).length,run('visibleSites().length'));
 console.log('Country pagination: 5 per page, country change resets page, continent overview hides cards, timeline remains complete.');
+
+run("renderDetail('91')");assert(elements.get('detail-body').innerHTML.includes('SPQR: A History of Ancient Rome'));
+run("renderDetail('1517')");assert(!elements.get('detail-body').innerHTML.includes('class="related-reading"'));
