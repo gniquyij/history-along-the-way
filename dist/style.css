@@ -260,7 +260,7 @@ body:has(#analytics-notice:not([hidden])){padding-bottom:100px}
 .map-spread-link{position:absolute;height:1px;background:#92743c;transform-origin:left center;pointer-events:none}
 
 /* Shared select controls: quiet border, consistent inset and a light focus ring. */
-.country-controls select,.mobile-era select{
+.country-controls select,.mobile-era select,.geo-country-label select,.geo-mobile-picker select{
  appearance:none;-webkit-appearance:none;
  min-height:44px;padding:10px 42px 10px 14px;
  border:1px solid #c8cec7;border-radius:6px;
@@ -270,13 +270,13 @@ body:has(#analytics-notice:not([hidden])){padding-bottom:100px}
  font-size:14px;font-weight:500;line-height:1.5;
  box-shadow:none;outline:none;transition:border-color .15s,box-shadow .15s;
 }
-.country-controls select:hover,.mobile-era select:hover{border-color:#8e9d93}
-.country-controls select:focus,.mobile-era select:focus{border-color:#8e9d93}
-.country-controls select:focus-visible,.mobile-era select:focus-visible{
+.country-controls select:hover,.mobile-era select:hover,.geo-country-label select:hover,.geo-mobile-picker select:hover{border-color:#8e9d93}
+.country-controls select:focus,.mobile-era select:focus,.geo-country-label select:focus,.geo-mobile-picker select:focus{border-color:#8e9d93}
+.country-controls select:focus-visible,.mobile-era select:focus-visible,.geo-country-label select:focus-visible,.geo-mobile-picker select:focus-visible{
  outline:2px solid #7c9187;outline-offset:2px;border-color:#7c9187;
 }
 .country-controls select{margin-top:8px;min-width:240px}
-@media(prefers-reduced-motion:reduce){.country-controls select,.mobile-era select{transition:none}}
+@media(prefers-reduced-motion:reduce){.country-controls select,.mobile-era select,.geo-country-label select,.geo-mobile-picker select{transition:none}}
 
 .paged-heritage-list{display:grid;gap:12px;outline:none}.heritage-list{scroll-margin-top:24px}.heritage-pagination{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0 4px;border-top:1px solid var(--line);margin-top:8px;font-size:14px;color:var(--muted)}.heritage-pagination>div{display:flex;align-items:center;gap:14px}.heritage-pagination button{font-size:14px}.heritage-pagination button:disabled{opacity:.4;cursor:default}@media(max-width:650px){.heritage-pagination{flex-direction:column;align-items:flex-start}.heritage-pagination>div{width:100%;justify-content:space-between}}
 
@@ -300,3 +300,513 @@ body:has(#analytics-notice:not([hidden])){padding-bottom:100px}
 .reading-list .reading-author,.reading-list .reading-rating,.reading-list .reading-credential,.reading-source-note{font-size:.875rem;color:#5b696d}
 .reading-credential a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .reading-source-note{margin:12px 0 0;line-height:1.6}
+
+/* A map-local perspective control, with shared typography and spacing. */
+.atlas-map-shell{border:1px solid var(--line);border-radius:10px;background:var(--white);overflow:hidden;margin:20px 0 24px;min-width:0}.atlas-map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid var(--line);background:#f7f5ef}.map-perspective{display:flex;align-items:center;gap:3px}.map-perspective>span{font-size:13px;color:var(--muted);margin-right:12px}.map-perspective button{border:0;background:transparent;min-height:36px;padding:6px 18px;border-radius:5px}.map-perspective button[aria-pressed="true"]{background:var(--ink);color:white}.atlas-map-toolbar>[data-fit-map]{background:transparent;min-height:36px;padding:5px 12px;font-size:14px}.atlas-map-canvas{height:390px;background:#e9eef0;isolation:isolate;z-index:0}.atlas-map-canvas .leaflet-control-attribution{font:11px/1.5 system-ui;max-width:95%;background:#ffffffe8}.atlas-map-canvas .leaflet-control-zoom a{color:var(--ink);font-size:20px}.atlas-map-legend{padding:12px 16px;color:var(--muted);font-size:13px;line-height:1.65;border-top:1px solid var(--line)}.atlas-map-legend p{margin:8px 0}.terrain-switches{display:flex;gap:20px;flex-wrap:wrap;color:var(--ink);font-size:14px}.terrain-switches label{display:flex;align-items:center;gap:7px}.terrain-switches input{accent-color:var(--ink);width:16px;height:16px}.atlas-map-error{padding:10px 16px;margin:0;color:#76501f;background:#faf1dc;font-size:14px}.atlas-leaflet-marker{display:grid;place-items:center}.atlas-dot{width:15px;height:15px;border:2px solid white;background:#173e51;border-radius:50%;box-shadow:0 1px 4px #16334655}.atlas-cluster{width:29px;height:29px;background:#173e51;color:white;border:2px solid white;border-radius:50%;display:grid;place-items:center;font:600 12px/1 system-ui}.atlas-place-menu{display:flex;flex-direction:column;max-height:200px;overflow:auto;gap:5px}.flow-marker span{display:block;color:#146384;font-size:13px;text-shadow:0 0 2px white}.map-figure .atlas-map-shell{margin:0}.geo-layout .atlas-map-shell{margin-top:0}.map-figure{min-width:0}
+@media(max-width:760px){.atlas-map-canvas{height:330px}.atlas-map-toolbar{padding:10px;gap:8px}.map-perspective button{padding:6px 12px}.map-perspective>span{display:none}}
+
+.atlas-map-canvas .atlas-leaflet-marker{display:grid;place-items:center}.atlas-map-canvas .atlas-dot{display:block}.atlas-map-canvas .leaflet-container{font-family:inherit}
+
+.atlas-dot.selected{background:var(--gold);outline:2px solid var(--gold);outline-offset:3px}.atlas-map-canvas .leaflet-tile-pane{filter:saturate(.78)}
+
+/* One navigation level, with the perspective as a compact paired control. */
+.atlas-navigation{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}
+.atlas-navigation .atlas-views{border-bottom:0;margin-bottom:0;flex-wrap:wrap}
+#atlas-perspective{flex-shrink:0}#atlas-perspective .map-perspective{border:1px solid var(--line);border-radius:8px;padding:3px;background:#eeece4}#atlas-perspective .map-perspective>span{display:none}#atlas-perspective button{font-size:13px;min-height:32px;padding:5px 15px}
+.atlas-map-label{font-size:13px;color:var(--muted)}
+@media(max-width:760px){.atlas-navigation{gap:10px;flex-wrap:wrap;padding-bottom:12px}.atlas-navigation .atlas-views{gap:8px;padding-bottom:0}}
+
+:is([data-card-history],[data-card-geography]){cursor:pointer;transition:border-color .15s,box-shadow .15s}:is([data-card-history],[data-card-geography]):hover{border-color:#a79a77}:is([data-card-history],[data-card-geography]):focus-within{box-shadow:0 0 0 2px #a79a7740}.site-card .site-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.site-card .site-top>div:first-child{min-width:0}.site-card .site-top>.status{flex-shrink:0;display:flex;gap:6px;margin:0}.site-card .site-top>.status button{font-size:12px;min-height:32px;padding:5px 9px}@media(max-width:560px){.site-card .site-top{flex-wrap:wrap;gap:10px}.site-card .site-top>.status{margin-left:auto}}
+
+/* Shared reading hierarchy for both heritage lenses. */
+#detail #detail-body,#geo-detail .geo-detail-body{padding:0 28px 24px;font-size:15px;line-height:1.7}
+:is(#detail,#geo-detail) .dialog-toolbar{padding:8px 28px}
+:is(#detail,#geo-detail) .heritage-detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:4px 0 20px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.heritage-detail-identity{min-width:0}
+:is(#detail,#geo-detail) .heritage-detail-header h2{font-size:24px;line-height:1.4;margin:6px 0}
+:is(#detail,#geo-detail) .heritage-detail-header .status{display:flex;flex-shrink:0;gap:6px;margin:0}
+:is(#detail,#geo-detail) .heritage-detail-header .status button{font-size:13px;padding:6px 10px;min-height:36px}
+:is(#detail,#geo-detail) .name-en,:is(#detail,#geo-detail) .name-local{font-size:14px;margin:4px 0;color:var(--muted)}
+:is(#detail,#geo-detail) .geo-detail-date{font-size:13px;margin:8px 0 0;color:var(--muted)}
+:is(#detail,#geo-detail) h3{font-size:16px;line-height:1.5;margin:20px 0 8px}
+:is(#detail,#geo-detail) p{font-size:15px;line-height:1.7;margin:8px 0}
+:is(#detail,#geo-detail) .credit,:is(#detail,#geo-detail) .reading-source-note{font-size:12px;line-height:1.6;color:var(--muted)}
+:is(#detail,#geo-detail) .credit:empty{display:none}
+:is(#detail,#geo-detail) .visit-focus{margin:20px 0;padding:14px 16px}
+:is(#detail,#geo-detail) .badges{margin:12px 0;gap:6px}
+:is(#detail,#geo-detail) .related-reading{margin:24px 0;padding-top:0;border:0}
+:is(#detail,#geo-detail) .reading-list li{display:flex;flex-direction:column;gap:6px;padding:14px 0;margin:0;border-bottom:1px solid var(--line)}
+:is(#detail,#geo-detail) .reading-list h4{grid-column:1;margin:0;line-height:1.5}
+:is(#detail,#geo-detail) .reading-list .reading-author{grid-column:1;grid-row:2;color:var(--muted)}
+:is(#detail,#geo-detail) .reading-list .reading-rating{text-align:left;color:var(--muted);font-size:13px;max-width:none}
+:is(#detail,#geo-detail) .reading-list p{grid-column:1 / -1;font-size:14px;line-height:1.6;margin:0}
+:is(#detail,#geo-detail) .heritage-detail-personal{border-top:1px solid var(--line);margin-top:26px;padding-top:2px}
+:is(#detail,#geo-detail) textarea{width:100%;min-height:110px;line-height:1.7}
+:is(#detail,#geo-detail) .heritage-detail-resources{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;border-top:1px solid var(--line);padding-top:16px;margin-top:24px;font-size:13px}
+:is(#detail,#geo-detail) .heritage-detail-resources a{font-size:13px}
+:is(#detail,#geo-detail) .resource-note{flex-basis:100%;margin:0;font-size:12px}
+@media(max-width:650px){#detail #detail-body,#geo-detail .geo-detail-body{padding:0 20px 20px}:is(#detail,#geo-detail) .heritage-detail-header{flex-wrap:wrap;gap:8px;padding-bottom:16px}:is(#detail,#geo-detail) .heritage-detail-header h2{font-size:22px}:is(#detail,#geo-detail) .heritage-detail-header .status{margin:0}:is(#detail,#geo-detail) .reading-list li{display:block}:is(#detail,#geo-detail) .reading-list p{margin-top:5px}:is(#detail,#geo-detail) .reading-list .reading-rating{text-align:left;max-width:none}}
+
+:is(#detail,#geo-detail) .heritage-detail-identity{display:flex;flex-direction:column;gap:6px}
+:is(#detail,#geo-detail) .heritage-detail-identity>:is(h2,p,.location,.world-kicker,.geo-detail-date){margin:0}
+:is(#detail,#geo-detail) :is(.location,.world-kicker,.geo-detail-date){font-size:13px;line-height:1.5;letter-spacing:0}
+:is(#detail,#geo-detail) .name-en,:is(#detail,#geo-detail) .name-local{line-height:1.6}
+:is(#detail,#geo-detail) .copy-inline{vertical-align:baseline;line-height:1.5;margin-left:6px}
+:is(#detail,#geo-detail) .geo-detail-context>h3:first-child{margin-top:0}
+:is(#detail,#geo-detail) .visit-focus-label{font-size:13px;line-height:1.5;letter-spacing:0;margin-bottom:6px}
+:is(#detail,#geo-detail) .visit-focus p{margin:0;line-height:1.7}
+:is(#detail,#geo-detail) .related-reading>h3{margin:0 0 4px}
+:is(#detail,#geo-detail) .reading-list h4{font-size:15px;line-height:1.6}
+:is(#detail,#geo-detail) .heritage-detail-resources{align-items:baseline;line-height:1.6}
+@media(max-width:650px){:is(#detail,#geo-detail) .dialog-toolbar{padding:8px 20px}:is(#detail,#geo-detail) .reading-list p{margin:0}}
+
+/* Both detail dialogs share their frame, stationary toolbar and close control. */
+#detail,#geo-detail{padding:0;overflow:hidden;width:calc(100% - 32px);max-width:760px;max-height:90dvh;border:0;border-radius:12px}
+#detail #detail-body,#geo-detail .geo-detail-body{max-height:calc(90dvh - 56px);overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+:is(#detail,#geo-detail) .dialog-toolbar{height:56px;padding:8px 20px;display:flex;justify-content:flex-end;align-items:center}
+#detail .dialog-toolbar .close,#geo-detail .dialog-toolbar [data-geo-close]{display:grid;place-items:center;position:static;width:36px;height:36px;min-height:36px;padding:0;margin:0;border:1px solid var(--line);border-radius:6px;background:transparent;font:22px/1 system-ui;color:var(--ink)}
+:is(#detail,#geo-detail) .dialog-toolbar button:hover{background:#f3f2eb}
+:is(#detail,#geo-detail) .detail-share{border:0;background:transparent;padding:0;min-height:32px;font-size:13px;line-height:1.6;color:var(--blue);text-decoration:underline;text-underline-offset:3px;margin:0}
+
+/* Shared template owns spacing; lens-specific content cannot shift its anchors. */
+:is(#detail,#geo-detail) .detail-section{margin:0 0 20px}
+:is(#detail,#geo-detail) .detail-section h3{margin:0 0 8px;font-size:16px;line-height:1.5}
+:is(#detail,#geo-detail) .detail-section p{margin:0;font-size:15px;line-height:1.7}
+:is(#detail,#geo-detail) .detail-date{font-size:13px;line-height:1.5;color:var(--muted)}
+:is(#detail,#geo-detail) .detail-date:empty{display:none}
+:is(#detail,#geo-detail) .detail-content>.related-reading{margin:24px 0 0}
+:is(#detail,#geo-detail) .heritage-detail-personal h3{margin:20px 0 8px}
+
+/* The toolbar and scroll body use the same gutters, including scrollbar space. */
+#detail,#geo-detail{--detail-gutter:32px;--detail-toolbar-height:64px}
+:is(#detail,#geo-detail) .dialog-toolbar{height:var(--detail-toolbar-height);padding:14px var(--detail-gutter);overflow-y:auto;scrollbar-gutter:stable}
+#detail #detail-body,#geo-detail .geo-detail-body{padding:8px var(--detail-gutter) 32px;max-height:calc(90dvh - var(--detail-toolbar-height))}
+:is(#detail,#geo-detail) .heritage-detail-header{padding:0 0 24px;margin-bottom:24px;gap:24px}
+:is(#detail,#geo-detail) .heritage-detail-identity{gap:8px}
+:is(#detail,#geo-detail) .detail-section{margin-bottom:24px}
+:is(#detail,#geo-detail) .visit-focus{padding:18px 20px}
+:is(#detail,#geo-detail) .heritage-detail-personal{margin-top:28px;padding-top:8px}
+:is(#detail,#geo-detail) .heritage-detail-resources{padding-top:20px;margin-top:28px;gap:12px 20px}
+@media(max-width:650px){#detail,#geo-detail{--detail-gutter:22px}#detail #detail-body,#geo-detail .geo-detail-body{padding-bottom:24px}:is(#detail,#geo-detail) .heritage-detail-header{gap:14px}:is(#detail,#geo-detail) .visit-focus{padding:16px}}
+
+/* Shared continent workspace: geography and history use the same two columns. */
+.continent-map-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start}
+.continent-map-column,.continent-info-column{min-width:0}
+.continent-map-column{position:sticky;top:20px}
+.continent-map-column .atlas-map-shell{margin:0}
+.continent-map-column .atlas-map-canvas{height:480px}
+.workspace:has(.continent-map-layout){display:block}
+.workspace:has(.continent-map-layout)>aside{position:static;width:auto;border:0;margin:0 0 16px;padding:0}
+.workspace:has(.continent-map-layout)>aside .shared-timeline,.workspace:has(.continent-map-layout)>aside .rail-title{display:none}
+.workspace:has(.continent-map-layout)>aside .mobile-era{display:flex;align-items:center;gap:12px}
+.country-controls{margin:0 0 16px;padding:0;border:0;background:none;min-height:0}
+.country-controls .tools label{display:flex;align-items:center;gap:12px;font-size:13px}
+.country-controls select{width:220px;margin:0}
+.continent-info-column .chapter-card{margin-top:0}
+.continent-info-column .results{margin-top:0}
+.geo-continent-layout .geo-sequence{position:static;border:0;background:transparent;padding:0;margin:0 0 20px}
+.geo-continent-layout .geo-sequence-heading,.geo-continent-layout .geo-time-list{display:none}
+.geo-continent-layout .geo-mobile-picker{display:flex;align-items:center;gap:12px}
+.geo-continent-layout .geo-mobile-picker>span{position:static;width:auto;height:auto;clip-path:none;white-space:nowrap;font-size:13px}
+.geo-continent-layout .geo-mobile-picker select{width:100%;min-width:0}
+.geo-heading .geo-country-label{display:flex;flex-direction:row;align-items:center;gap:10px;white-space:nowrap;font-size:13px}
+.geo-heading .geo-country-label select{width:210px;margin:0}
+@media(max-width:900px){.continent-map-layout{grid-template-columns:1fr;gap:24px}.continent-map-column{position:static}.continent-map-column .atlas-map-canvas{height:330px}}
+
+/* Overview timeline belongs to the map frame, above its attribution controls. */
+.overview-map-with-time>.geo-world-time,.overview-map-with-time>.map-time-controls{position:relative;z-index:1;order:initial;width:auto;margin:0;padding:14px 18px;background:#f7f5ef;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none}
+.overview-map-with-time .geo-world-time-heading{align-items:baseline;gap:12px}
+.overview-map-with-time .geo-world-time-heading strong{font-size:14px}
+.overview-map-with-time .geo-world-slider-label{margin-top:8px}
+.overview-map-with-time .geo-world-ticks{gap:4px}
+.overview-map-with-time .geo-world-ticks button{font-size:11px;line-height:1.5;min-height:32px}
+.overview-map-with-time .map-time-options{margin-top:8px;gap:10px}
+.overview-map-with-time .map-time-options label{font-size:12px}
+.overview-map-with-time .map-time-controls>label{font-size:13px}
+@media(max-width:600px){.overview-map-with-time>.geo-world-time,.overview-map-with-time>.map-time-controls{padding:12px}.overview-map-with-time .geo-world-time-heading{flex-wrap:wrap}.overview-map-with-time .geo-world-ticks{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.overview-map-with-time>.geo-world-time,.overview-map-with-time>.map-time-controls{border-top:0;border-bottom:1px solid var(--line)}
+.overview-map-with-time .map-date-inline{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 8px;gap:12px;min-height:0}
+.overview-map-with-time .map-date-inline strong{font-size:18px}
+.overview-map-with-time .map-date-inline span{font-size:12px}
+#world-main:has(.geo-world-layout),#world-main:has(.map-explorer){padding-top:16px}
+.map-explorer:has(.overview-map-with-time) .map-figure{grid-row:1}
+.map-explorer:has(.overview-map-with-time) .map-reading{grid-row:1}
+
+.geo-world-layout:has(.overview-map-with-time),.map-explorer:has(.overview-map-with-time){display:block}
+.overview-map-with-time .atlas-map-canvas{height:clamp(400px,65vh,780px)}
+.overview-map-with-time .map-time-options{display:none}
+.overview-map-with-time #map-year{height:28px;margin:0}
+.overview-map-with-time .geo-world-time>label{font-size:14px;font-weight:600}
+.overview-map-with-time .atlas-map-toolbar{padding:6px 16px}
+.atlas-overview-popup h3{font-size:16px;line-height:1.5;margin:0 0 8px}
+.atlas-overview-popup p{font-size:14px;line-height:1.65;margin:0 0 12px}
+.atlas-overview-popup button{display:block;text-align:left;width:100%;font-size:13px;margin:6px 0;min-height:36px}
+@media(max-width:600px){.overview-map-with-time .atlas-map-canvas{height:55vh;min-height:320px}}
+
+/* One time control: no repeated date heading above the scale. */
+.overview-map-with-time>.geo-world-time,.overview-map-with-time>.map-time-controls{padding:8px 16px 10px}
+.overview-map-with-time #geo-world-time,.overview-map-with-time #map-year{display:block;height:26px;margin:0;width:100%}
+.overview-map-with-time .geo-world-ticks{gap:2px}
+.overview-map-with-time .geo-world-ticks button{padding:4px;min-height:28px}
+.overview-map-with-time .map-scale{margin:0;line-height:1.5}
+
+/* Overview spacing contract, shared by both perspectives. */
+#world-main:has(.overview-map-with-time){padding-top:20px}
+#world-main .overview-map-with-time{margin:0;width:100%}
+#world-main .overview-map-with-time .atlas-map-toolbar{height:48px;padding:8px 18px;border-bottom:0;gap:12px}
+#world-main .overview-map-with-time .atlas-map-toolbar>[data-fit-map]{min-height:32px;padding:4px 10px;line-height:1.5}
+#world-main .overview-map-with-time>.geo-world-time,#world-main .overview-map-with-time>.map-time-controls{padding:0 18px 12px;margin:0;border-top:0;border-bottom:1px solid var(--line);background:#f7f5ef}
+#world-main .overview-map-with-time .atlas-map-canvas{height:clamp(400px,62vh,720px);min-height:0;width:100%}
+#world-main .overview-map-with-time .atlas-map-legend{padding:10px 18px;line-height:1.5}
+.atlas-map-canvas .leaflet-bottom.leaflet-right{max-width:100%}
+.atlas-map-canvas .leaflet-control-attribution{max-width:none;white-space:nowrap;line-height:1.5;padding:3px 7px}
+@media(max-width:600px){#world-main:has(.overview-map-with-time){padding-top:14px}#world-main .overview-map-with-time .atlas-map-toolbar{padding-inline:12px}#world-main .overview-map-with-time>.geo-world-time,#world-main .overview-map-with-time>.map-time-controls{padding:0 12px 10px}#world-main .overview-map-with-time .atlas-map-canvas{height:55vh;min-height:320px}.atlas-map-canvas .leaflet-control-attribution{white-space:normal;max-width:calc(100vw - 60px)}.atlas-map-canvas .leaflet-control-attribution a{white-space:nowrap}}
+
+/* Page rhythm: clear section breaks, closer spacing within each control group. */
+:root{--atlas-section-gap:24px;--atlas-control-gap:12px;--atlas-inset:24px}
+.atlas-navigation{gap:20px}
+.atlas-navigation .atlas-views{padding-bottom:12px}
+.continent-nav{padding:10px 0;gap:8px}
+main{padding-top:24px;padding-bottom:32px}
+.geo-heading{margin-top:0;margin-bottom:24px;padding-bottom:20px;gap:20px}
+.geo-heading p{margin:8px 0 0;line-height:1.7}
+.continent-map-layout{gap:28px}
+#world-main:has(.overview-map-with-time){padding-top:24px}
+#world-main .overview-map-with-time .atlas-map-toolbar{height:auto;min-height:56px;padding:12px var(--atlas-inset);gap:12px}
+#world-main .overview-map-with-time>.geo-world-time,#world-main .overview-map-with-time>.map-time-controls{padding:4px var(--atlas-inset) 18px}
+.overview-map-with-time #geo-world-time,.overview-map-with-time #map-year{height:30px;margin:0 0 4px}
+.overview-map-with-time .geo-world-ticks{gap:6px}
+.overview-map-with-time .geo-world-ticks button{padding:5px 4px;min-height:32px;line-height:1.5}
+#world-main .overview-map-with-time .atlas-map-legend{padding:12px var(--atlas-inset)}
+@media(min-width:901px){
+ .header-inner{padding-top:28px}
+ .identity-row{margin-bottom:24px}
+ .brand-mark{width:46px;height:54px}
+ .top .brand .brand-name{font-size:30px}
+ html[lang=en] .top .brand .brand-name{font-size:28px}
+ .top .brand .brand-type{gap:6px}
+ .atlas-signature svg{max-height:54px}
+ #world-main .atlas-map-canvas,#europe-main .atlas-map-canvas{height:var(--fit-map-height,460px);min-height:320px}
+}
+@media(max-width:650px){:root{--atlas-inset:16px}.header-inner{padding-top:22px}.identity-row{margin-bottom:22px}main{padding-top:20px}.geo-heading{gap:16px;margin-bottom:20px;padding-bottom:18px}#world-main:has(.overview-map-with-time){padding-top:20px}.continent-map-layout{gap:24px}}
+
+/* Navigation owns its spacing; nested tab lists add no extra bottom padding. */
+.top{border-bottom:0}
+.top .atlas-navigation{padding:12px 0;gap:16px;align-items:center;border-bottom:1px solid var(--line)}
+.top .atlas-navigation .atlas-views{padding:0;margin:0;gap:8px;align-items:center}
+.top .atlas-navigation .atlas-views button{margin:0;min-height:40px;padding:8px 14px;line-height:1.5}
+.top #atlas-perspective{margin:0;align-self:center}
+.top .continent-nav{border-top:0;border-bottom:1px solid var(--line);padding:12px 0;margin:0;gap:8px;align-items:center}
+.top .continent-nav button{min-height:36px;padding:6px 12px;line-height:1.5}
+.top .navigation-row{border-top:0;border-bottom:1px solid var(--line)}
+#world-main,#world-main:has(.overview-map-with-time),#europe-main{padding-top:24px}
+@media(max-width:650px){.top .atlas-navigation{padding:12px 0;row-gap:12px}.top .atlas-navigation .atlas-views{gap:4px}.top .atlas-navigation .atlas-views button{padding:8px 10px}.top .continent-nav{padding:10px 0;gap:4px}#world-main,#world-main:has(.overview-map-with-time),#europe-main{padding-top:20px}}
+
+/* A single gap at each page boundary, rather than stacked child margins. */
+#world-main,#europe-main{padding-bottom:24px}
+#world-main>.map-explorer,#world-main>.geo-world-layout{margin-top:0;margin-bottom:0}
+.continent-map-column>.atlas-map-shell{margin-bottom:0}
+.continent-map-column>.geo-map-context{margin:8px 0 0}
+.continent-info-column>:last-child{margin-bottom:0}
+body>.atlas-footer{margin-top:0;padding-bottom:24px}
+body>.atlas-footer .atlas-footer-inner{padding-top:20px}
+body>.atlas-footer .site-policies{margin-top:16px;row-gap:8px}
+@media(max-width:650px){#world-main,#europe-main{padding-bottom:20px}body>.atlas-footer .atlas-footer-inner{padding-top:18px}body>.atlas-footer{padding-bottom:20px}}
+
+/* Overview is framed by the map itself; no extra rules above or below it. */
+body:has(#world-main:not([hidden]) .overview-map-with-time) .top .atlas-navigation{border-bottom:0;padding-bottom:8px}
+body:has(#world-main:not([hidden]) .overview-map-with-time) #world-main{padding-top:12px;padding-bottom:16px}
+body:has(#world-main:not([hidden]) .overview-map-with-time)>.atlas-footer .atlas-footer-inner{border-top:0;padding-top:8px}
+
+.overview-map-with-time>.atlas-map-toolbar[hidden]{display:none}
+#world-main .overview-map-with-time>.geo-world-time,#world-main .overview-map-with-time>.map-time-controls{padding-top:12px}
+.atlas-map-canvas .atlas-reset-control{margin-top:6px}
+.atlas-reset-control button{display:grid;place-items:center;width:30px;height:30px;min-height:30px;padding:0;border:0;border-radius:2px;background:#fff;color:var(--ink);font:22px/1 system-ui}
+.atlas-reset-control button:hover{background:#f4f4f4}
+
+.atlas-map-shell>.atlas-map-legend[hidden]{display:none}
+
+/* Whole-continent history has no list until a country is selected. */
+.continent-map-layout{grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr)}
+.continent-map-layout:has(>.continent-info-column>section:first-child:empty):has(.heritage-list:empty){grid-template-columns:minmax(0,1fr)}
+.continent-map-layout:has(>.continent-info-column>section:first-child:empty):has(.heritage-list:empty)>.continent-info-column{display:none}
+.continent-map-layout:has(>.continent-map-column:empty){grid-template-columns:minmax(0,1fr)}
+.continent-map-layout>.continent-map-column:empty{display:none}
+@media(max-width:900px){.continent-map-layout{grid-template-columns:minmax(0,1fr)}}
+
+/* Country selection shares the browsing-mode row, never a separate content block. */
+.top .navigation-row{flex-wrap:wrap;gap:12px 24px}
+.top .navigation-row .atlas-region{display:none}
+#country-toolbar{display:flex;align-items:center;gap:10px;margin-left:auto;font-size:12px;color:var(--muted)}
+#country-toolbar[hidden]{display:none}
+#country-toolbar select{width:210px;min-height:36px;padding:6px 30px 6px 10px;font-size:13px;margin:0}
+body:has(#country-toolbar:not([hidden])) main .country-controls,body:has(#country-toolbar:not([hidden])) main .geo-heading{display:none}
+.geo-heading:empty{display:none}
+@media(max-width:650px){#country-toolbar{margin:0 0 12px;flex:1}#country-toolbar select{flex:1;width:auto;max-width:280px}}
+
+.atlas-map-toolbar>[data-fit-map][hidden]{display:none}
+
+/* Timeline browsing: chronology on the left, map and reading on the right. */
+@media(min-width:901px){
+ .workspace:not(.without-timeline):has(.continent-map-layout){display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start}
+ .workspace:not(.without-timeline)>aside{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;margin:0;padding:0 18px 0 0;border-right:1px solid var(--line)}
+ .workspace:not(.without-timeline)>aside .shared-timeline{display:block}
+ .workspace:not(.without-timeline)>aside .rail-title{display:block}
+ .workspace:not(.without-timeline)>aside .mobile-era{display:none}
+ .workspace:not(.without-timeline)>.continent-map-layout{display:flex;flex-direction:column;gap:24px}
+ .workspace:not(.without-timeline) .continent-map-column,.workspace:not(.without-timeline) .continent-info-column{width:100%;position:static}
+ .geo-timeline-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:0 28px;align-items:start}
+ .geo-timeline-layout>.continent-info-column{display:contents}
+ .geo-timeline-layout .geo-sequence{grid-column:1;grid-row:1 / 4;position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;margin:0;padding:0 18px 0 0;border-right:1px solid var(--line)}
+ .geo-timeline-layout .geo-sequence-heading{display:block}
+ .geo-timeline-layout .geo-time-list{display:block}
+ .geo-timeline-layout .geo-mobile-picker{display:none}
+ .geo-timeline-layout>.continent-map-column{grid-column:2;grid-row:1;position:static;margin-bottom:24px}
+ .geo-timeline-layout .geo-stage{grid-column:2;grid-row:2}
+ .geo-timeline-layout .geo-places{grid-column:2;grid-row:3}
+}
+
+/* Country selector leads the continent toolbar; browsing modes align right. */
+.top .navigation-row #country-toolbar{order:0;margin-left:0;margin-right:auto}
+.top .navigation-row .primary-nav{order:1;margin-left:auto}
+@media(max-width:650px){.top .navigation-row{display:flex;flex-wrap:wrap}.top .navigation-row #country-toolbar{flex:1 1 220px;margin:10px 0}.top .navigation-row .primary-nav{flex:0 1 auto;margin-left:auto;justify-content:flex-end;gap:20px}}
+
+/* Inline continent picker replaces the separate continent tab row. */
+.top #continent-nav{display:none}
+.top #continent-picker{display:inline-block;width:auto;max-width:180px;min-height:36px;margin:0 8px 0 -4px;padding:6px 28px 6px 10px;border:1px solid var(--line);border-radius:6px;background-color:#fffefa;font-size:13px;color:var(--ink)}
+.top #continent-picker[hidden]{display:none}
+@media(max-width:650px){.top #continent-picker{max-width:130px;margin-right:0;font-size:12px}}
+
+/* The active continent and its picker form one navigation control. */
+.top .atlas-views:has(#continent-picker:not([hidden])) [data-atlas="continents"]{border-radius:6px 0 0 6px;padding-right:14px}
+.top .atlas-views #continent-picker:not([hidden]){appearance:none;-webkit-appearance:none;box-sizing:border-box;height:40px;min-height:40px;max-width:190px;margin:0 8px 0 -8px;padding:8px 32px 8px 14px;border:0;border-left:1px solid #ffffff38;border-radius:0 6px 6px 0;background-color:var(--ink);color:#fff;font:inherit;font-size:13px;line-height:1.5;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m3 4.5 3 3 3-3' fill='none' stroke='%23ffffff' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.top .atlas-views #continent-picker:hover{background-color:#25495a}
+.top .atlas-views #continent-picker:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.top #continent-picker option{background:#fffefa;color:var(--ink)}
+@media(max-width:650px){.top .atlas-views #continent-picker:not([hidden]){margin-left:-4px;margin-right:0;font-size:12px;padding-left:10px;padding-right:28px;background-position:right 9px center;max-width:150px}}
+
+/* Country results scroll beside the map, without stretching the page. */
+@media(min-width:901px){
+ .workspace.without-timeline .continent-map-layout:has(>.continent-map-column:not(:empty)),.geo-continent-layout:not(.geo-timeline-layout){align-items:start}
+ .workspace.without-timeline .continent-map-layout:has(>.continent-map-column:not(:empty))>.continent-info-column,.geo-continent-layout:not(.geo-timeline-layout)>.continent-info-column{max-height:var(--country-panel-height,540px);overflow-y:auto;overscroll-behavior-y:contain;scrollbar-gutter:stable;padding:0 12px 4px 0;scroll-padding-top:12px}
+ .workspace.without-timeline .continent-map-layout>.continent-map-column,.geo-continent-layout:not(.geo-timeline-layout)>.continent-map-column{position:static}
+}
+
+.atlas-map-shell>.atlas-map-toolbar[hidden]{display:none}
+
+body>.atlas-footer .atlas-footer-inner{border-top:0}
+.atlas-map-context{padding:3px 7px;background:#ffffffe8;color:#53616a;font:11px/1.5 system-ui;pointer-events:none;border-radius:2px}
+.atlas-map-canvas .leaflet-bottom.leaflet-left .atlas-map-context{margin:0 0 25px 6px}
+@media(max-width:600px){.atlas-map-canvas .leaflet-bottom.leaflet-left .atlas-map-context{margin-bottom:42px}}
+
+/* Without rules, section spacing supplies the hierarchy. */
+#world-main,#europe-main,#world-main:has(.overview-map-with-time){padding-top:20px;padding-bottom:24px}
+body:has(#world-main:not([hidden]) .overview-map-with-time) #world-main{padding-top:16px;padding-bottom:24px}
+body>.atlas-footer .atlas-footer-inner,body:has(#world-main:not([hidden]) .overview-map-with-time)>.atlas-footer .atlas-footer-inner{padding-top:8px}
+.continent-info-column .geo-places>h2,.continent-info-column .result-heading{margin-top:0;margin-bottom:16px}
+@media(max-width:650px){#world-main,#europe-main{padding-top:18px;padding-bottom:20px}}
+
+/* Avoid reserving a second gutter between cards and the page's right edge. */
+@media(min-width:901px){
+ .workspace.without-timeline .continent-map-layout:has(>.continent-map-column:not(:empty))>.continent-info-column,.geo-continent-layout:not(.geo-timeline-layout)>.continent-info-column{padding-right:0;scrollbar-gutter:auto;scrollbar-width:thin}
+}
+.continent-info-column .site-card{margin-left:0;margin-right:0}
+
+/* Timeline workspace: two independently scrolling panes within the viewport. */
+@media(min-width:901px){
+ .workspace:not(.without-timeline):has(.continent-map-layout){height:var(--timeline-pane-height,65vh);min-height:320px;align-items:stretch}
+ .workspace:not(.without-timeline):has(.continent-map-layout)>aside{position:static;height:100%;max-height:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+ .workspace:not(.without-timeline)>.continent-map-layout{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;display:block}
+ .workspace:not(.without-timeline)>.continent-map-layout>.continent-map-column{margin-bottom:24px}
+ .geo-continent-layout.geo-timeline-layout{height:var(--timeline-pane-height,65vh);min-height:320px;grid-template-rows:minmax(0,1fr);overflow:hidden}
+ .geo-continent-layout.geo-timeline-layout>.continent-info-column{display:flex;flex-direction:column;grid-column:2;grid-row:1;height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;min-height:0}
+ .geo-continent-layout.geo-timeline-layout>.geo-sequence{grid-column:1;grid-row:1;position:static;height:100%;max-height:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+ .geo-continent-layout.geo-timeline-layout .continent-map-column{position:static;flex-shrink:0;margin-bottom:24px}
+ .geo-continent-layout.geo-timeline-layout .atlas-map-canvas,.workspace:not(.without-timeline) .atlas-map-canvas{height:360px!important;min-height:0!important}
+}
+
+body>.atlas-footer .site-policies{margin-top:0}
+#about-dialog{padding:0;max-width:600px;overflow:hidden}
+#about-dialog .dialog-toolbar{padding:12px 24px 0}
+#about-close{width:36px;height:36px;min-height:36px;padding:0;font-size:22px;line-height:1}
+.about-body{padding:4px 28px 28px;max-height:calc(85dvh - 60px);overflow-y:auto}
+.about-body h2{font-size:22px;line-height:1.4;margin:0 0 16px}
+.about-body p{font-size:15px;line-height:1.8;margin:0}
+@media(max-width:650px){.about-body{padding:4px 22px 24px}}
+
+/* Timeline mode keeps the map in place; detail is opened from its markers. */
+.workspace:not(.without-timeline)>.continent-map-layout>.continent-info-column,
+.geo-timeline-layout .geo-stage,.geo-timeline-layout .geo-places{display:none}
+.timeline-context{margin:8px 0 18px;padding:0 12px;font-size:13px;line-height:1.75;color:var(--muted)}
+@media(min-width:901px){
+ .workspace:not(.without-timeline)>.continent-map-layout,
+ .geo-continent-layout.geo-timeline-layout>.continent-info-column{overflow:hidden}
+ .workspace:not(.without-timeline)>.continent-map-layout>.continent-map-column,
+ .geo-continent-layout.geo-timeline-layout .continent-map-column{height:100%;min-height:0;margin-bottom:0;flex:1}
+ .workspace:not(.without-timeline) .atlas-map-shell,
+ .geo-timeline-layout .atlas-map-shell{height:100%;min-height:0;display:flex;flex-direction:column;box-sizing:border-box}
+ .workspace:not(.without-timeline) .atlas-map-canvas,
+ .geo-continent-layout.geo-timeline-layout .atlas-map-canvas{height:auto!important;flex:1;min-height:0!important}
+ .geo-timeline-layout .atlas-map-legend{flex-shrink:0}
+}
+
+.atlas-footer .site-policies .about-link{display:inline-flex;align-items:center;margin:0;padding:4px 0;min-height:32px;font-family:inherit;font-size:13px;font-weight:400;line-height:1.5;color:var(--muted);border:0;background:transparent;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+.atlas-footer .about-link:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Geography layers share one map-local control, independent of map height. */
+.atlas-map-canvas .atlas-layer-control{margin:10px;background:rgba(255,254,250,.96);border:1px solid #c9cec8;border-radius:6px;box-shadow:0 1px 4px #16334618;padding:6px 10px;color:var(--ink);font-family:inherit}
+.atlas-layer-control .terrain-switches{gap:12px;align-items:center;flex-wrap:nowrap;font-size:12px;line-height:20px}
+.atlas-layer-control .terrain-switches label{gap:6px;white-space:nowrap;cursor:pointer;min-height:28px}
+.atlas-layer-control .terrain-switches input{margin:0;width:14px;height:14px}
+.map-layer-info{position:relative;margin-left:2px}
+.map-layer-info summary{display:grid;place-items:center;list-style:none;width:24px;height:28px;cursor:pointer;color:var(--muted);font:600 13px/1 Georgia,serif}
+.map-layer-info summary::-webkit-details-marker{display:none}
+.map-layer-info summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:3px}
+.map-layer-info p{position:absolute;right:-10px;top:34px;width:230px;box-sizing:border-box;margin:0;padding:12px 14px;background:#fffefa;border:1px solid var(--line);border-radius:6px;box-shadow:0 3px 12px #16334618;font:13px/1.65 system-ui;color:var(--muted)}
+@media(max-width:500px){.atlas-map-canvas .atlas-layer-control{padding:5px 7px;margin:10px 8px}.atlas-layer-control .terrain-switches{gap:8px;font-size:11px}}
+
+/* A shared visual scale for all map controls. */
+.atlas-map-canvas{--map-control-size:32px;--map-control-surface:rgba(255,254,250,.97);--map-control-border:#c9cec8}
+.atlas-map-canvas .leaflet-top.leaflet-left{display:flex;align-items:flex-start;gap:6px;padding:12px;pointer-events:none}
+.atlas-map-canvas .leaflet-top.leaflet-left>.leaflet-control{float:none;clear:none;margin:0;pointer-events:auto}
+.atlas-map-canvas .leaflet-control-zoom{display:flex}
+.atlas-map-canvas .leaflet-control-zoom,.atlas-map-canvas .atlas-reset-control,.atlas-map-canvas .atlas-layer-control{border:1px solid var(--map-control-border);border-radius:5px;background:var(--map-control-surface);box-shadow:0 1px 3px #16334612}
+.atlas-map-canvas .leaflet-control-zoom a,.atlas-map-canvas .atlas-reset-control button{box-sizing:border-box;display:grid;place-items:center;width:var(--map-control-size);height:var(--map-control-size);min-height:var(--map-control-size);padding:0;margin:0;border:0;border-radius:4px;background:transparent;color:var(--ink);line-height:1;font-size:18px}
+.atlas-map-canvas .leaflet-control-zoom a:first-child{border-right:1px solid var(--map-control-border);border-radius:4px 0 0 4px}
+.atlas-map-canvas .leaflet-control-zoom a:last-child{border-radius:0 4px 4px 0}
+.atlas-map-canvas .leaflet-control-zoom a:hover,.atlas-map-canvas .atlas-reset-control button:hover{background:#edf0ea}
+.atlas-map-canvas .atlas-reset-control button svg{display:block}
+.atlas-map-canvas .atlas-layer-control{margin:12px;padding:0 10px}
+.atlas-layer-control .terrain-switches{gap:12px;font-size:12px;line-height:20px;min-height:var(--map-control-size)}
+.atlas-layer-control .terrain-switches label{min-height:var(--map-control-size);gap:6px}
+.atlas-layer-control .map-layer-info{margin:0;padding-left:8px;border-left:1px solid var(--map-control-border)}
+.atlas-layer-control .map-layer-info summary{width:18px;height:24px}
+@media(max-width:520px){.atlas-map-canvas .leaflet-top.leaflet-right{top:42px}.atlas-layer-control .terrain-switches{gap:10px}}
+
+.atlas-map-canvas .atlas-marker-info{padding:0}
+.atlas-marker-info .map-layer-info{margin:0;padding:0;border:0}
+.atlas-marker-info .map-layer-info summary{width:var(--map-control-size);height:var(--map-control-size)}
+.atlas-marker-info .map-layer-info p{right:0;top:40px}
+
+/* Reading views use the same outer edges, with a quieter internal hierarchy. */
+.connections-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.connections-grid .connection-story{margin:0;padding:24px;border:1px solid var(--line);border-radius:9px;min-width:0}
+.connections-grid .connection-story>h2{font:500 22px/1.45 Georgia,"Songti SC",serif;margin:8px 0 16px}
+.connections-grid .connection-story>p{font-size:15px;line-height:1.8;margin:0 0 20px}
+.connections-grid .world-kicker{font-size:12px;line-height:1.5;letter-spacing:.03em}
+.connections-grid .world-property{margin:0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent}
+.connections-grid .world-property summary{padding:18px 24px 0 0}
+.connections-grid .world-property summary strong{font-size:18px;line-height:1.5;margin:6px 0}
+.connections-grid .world-property-body{padding:16px 0 0;font-size:15px;line-height:1.8}
+.connections-grid .connection-story>button{margin-top:20px;font-size:13px;min-height:36px;padding:6px 12px}
+.journal-page .continent-map-layout{display:block}
+.journal-page .continent-info-column{display:block!important;width:100%;max-height:none!important;overflow:visible!important;padding:0!important}
+.journal-page .chapter-card{padding:0;background:transparent;border:0;border-radius:0;margin:0 0 24px}
+.journal-page .chapter-card h2{font:500 24px/1.45 Georgia,"Songti SC",serif;margin:0 0 8px}
+.journal-page .chapter-card p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.journal-page .results{margin:0}
+.journal-page .result-heading{justify-content:flex-start;gap:12px;margin:0 0 16px}
+.journal-page .result-heading h2{font-size:15px;font-weight:500}
+.journal-page .heritage-list{margin-top:0}
+.journal-page .country-heading{margin:20px 0 4px;font-size:15px}
+.journal-page .country-heading:first-child{margin-top:0}
+.journal-page .empty{padding:32px 24px;background:#fffefa;border:1px solid var(--line);border-radius:9px;text-align:center;font-size:14px;color:var(--muted)}
+.records-footer#records-tools{max-width:1500px;margin:0 auto 24px;padding:0 4.5%}
+#records-tools .backup{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 0;border:0;background:transparent}
+#records-tools .backup>span{flex:1 1 320px;font-size:13px;line-height:1.7;color:var(--muted)}
+#records-tools .backup button{min-height:36px;padding:6px 12px;font-size:13px}
+#records-tools #feedback:empty{display:none}
+@media(max-width:900px){.connections-grid{grid-template-columns:1fr;gap:20px}}
+@media(max-width:650px){.connections-grid .connection-story{padding:20px}.connections-grid .connection-story>h2{font-size:20px}.records-footer#records-tools{padding-inline:18px}}
+
+.journal-page .chapter-card p{display:none}
+.records-footer#records-tools{border:0}
+
+/* Keep the legal footer at the viewport bottom without covering content. */
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+body>.top,body>main,body>.records-footer,body>.atlas-footer{width:100%;flex-shrink:0}
+body>main{margin-block:0}
+body>.atlas-footer{margin-top:auto;padding-top:24px}
+body>main[hidden],body>.records-footer[hidden]{display:none}
+.journal-page .chapter-card{margin-bottom:20px}
+.journal-page .result-heading{margin-bottom:12px}
+.journal-page .empty{padding:36px 24px}
+.records-footer#records-tools{margin-top:0;margin-bottom:0}
+#records-tools .backup{padding-top:0;padding-bottom:8px}
+
+/* Map pages keep natural document flow and compact footer spacing. */
+@media(min-width:901px){
+ body>.atlas-footer{padding-top:12px;padding-bottom:16px}
+ body>.atlas-footer .atlas-footer-inner{padding-top:0}
+ #world-main,#europe-main{padding-bottom:12px}
+ body:has(#world-main:not([hidden]) .overview-map-with-time) #world-main{padding-bottom:12px}
+ #world-main .atlas-map-canvas,#europe-main .atlas-map-canvas{min-height:180px;height:var(--fit-map-height,400px)}
+}
+
+/* Overview chronology sits within the map instead of taking a separate row. */
+.overview-map-with-time{position:relative}
+#world-main .overview-map-with-time>.geo-world-time,
+#world-main .overview-map-with-time>.map-time-controls{position:absolute;z-index:2;left:16px;right:16px;bottom:30px;width:auto;margin:0;padding:8px 14px 10px;border:1px solid var(--line);border-radius:7px;background:rgba(255,254,250,.95);box-shadow:0 2px 8px #16334612}
+.overview-map-with-time #geo-world-time,.overview-map-with-time #map-year{height:24px;margin:0}
+@media(min-width:901px){
+ .workspace:not(.without-timeline):has(.continent-map-layout),.geo-continent-layout.geo-timeline-layout{min-height:180px}
+}
+@media(max-width:600px){
+ #world-main .overview-map-with-time>.geo-world-time,#world-main .overview-map-with-time>.map-time-controls{left:10px;right:10px;bottom:48px;padding:6px 10px 8px}
+}
+
+/* One compact gap between map workspaces and the legal footer. */
+body:has(main:not([hidden]) .atlas-map-shell)>.atlas-footer{padding-top:20px}
+body:has(main:not([hidden]) .atlas-map-shell)>.atlas-footer .atlas-footer-inner{padding-top:0}
+#world-main:has(.atlas-map-shell),#europe-main:has(.atlas-map-shell){padding-bottom:12px}
+body:has(#world-main:not([hidden]) .overview-map-with-time) #world-main{padding-bottom:12px}
+.geo-world-layout .atlas-map-shell,.map-explorer .atlas-map-shell{margin-bottom:0}
+
+/* Override the legacy overview vh rule with the measured available height. */
+@media(min-width:901px){
+ #world-main .overview-map-with-time .atlas-map-canvas{height:var(--fit-map-height,400px);min-height:180px}
+}
+
+@media(max-width:650px){
+ .overview-map-with-time .geo-world-ticks{display:flex;overflow-x:auto;gap:4px;scrollbar-width:thin;overscroll-behavior-x:contain}
+ .overview-map-with-time .geo-world-ticks button{flex:0 0 100px;min-height:40px;padding:4px 6px}
+ .geo-mobile-picker select,.mobile-era select{min-width:0;width:100%}
+ .workspace .mobile-era{align-items:center}
+ .workspace .mobile-era>span{flex-shrink:0}
+ .policy-page{padding:24px 18px 32px}
+ .policy-nav{gap:12px;margin-bottom:28px}
+ .policy-nav button{flex-shrink:0;min-height:40px}
+ .policy-page h1{font-size:26px}
+ .policy-page ul{padding-left:22px}
+ :is(#detail,#geo-detail){max-width:calc(100vw - 24px);width:calc(100vw - 24px)}
+ .heritage-detail-header .status{flex-wrap:wrap}
+}
+
+/* Anchor map controls to their own map at every viewport width. */
+.atlas-map-canvas .leaflet-top.leaflet-right{top:0;right:0}
+@media(max-width:650px){
+ .atlas-map-canvas .leaflet-top.leaflet-left{padding:10px;gap:4px;flex-direction:column}
+ .atlas-map-canvas .leaflet-control-zoom{flex-direction:column}
+ .atlas-map-canvas .leaflet-control-zoom a:first-child{border-right:0;border-bottom:1px solid var(--map-control-border);border-radius:4px 4px 0 0}
+ .atlas-map-canvas .leaflet-control-zoom a:last-child{border-radius:0 0 4px 4px}
+ .atlas-map-canvas .atlas-layer-control{margin:10px}
+ .atlas-layer-control .terrain-switches{display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:0 6px}
+ .atlas-layer-control .terrain-switches label{grid-column:1;min-height:32px}
+ .atlas-layer-control .terrain-switches .map-layer-info{grid-column:2;grid-row:1/3;align-self:start;margin-top:4px}
+ .atlas-map-canvas .atlas-marker-info{padding:0}
+}
+
+/* Mobile chronology precedes its map; the label must not constrain the select. */
+@media(max-width:900px){
+ .geo-continent-layout.geo-timeline-layout{display:flex;flex-direction:column;gap:14px}
+ .geo-timeline-layout>.geo-sequence{order:0;width:100%;padding:0;margin:0;background:transparent;border:0}
+ .geo-timeline-layout>.continent-map-column{order:1;width:100%}
+ .geo-timeline-layout>.continent-info-column{display:none}
+ .geo-timeline-layout .geo-mobile-picker{display:block;margin:0}
+ .geo-timeline-layout .geo-mobile-picker>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .geo-timeline-layout .geo-mobile-picker select{width:100%;max-width:100%;font-size:14px;min-height:44px}
+}
+
+/* Give the footer balanced breathing room above and below its text. */
+body>.atlas-footer{padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}

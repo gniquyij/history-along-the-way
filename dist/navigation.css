@@ -1,0 +1,84 @@
+/* Shared navigation geometry. Keep menu spacing and sizing in this file. */
+.top .atlas-navigation{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 12px;border-bottom:0}
+.top .atlas-navigation .atlas-views{display:flex;align-items:center;gap:8px;padding:0;margin:0;flex-wrap:wrap}
+.top .atlas-navigation .atlas-views>button{height:40px;min-height:40px;padding:9px 14px;margin:0;font:500 14px/20px system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border:1px solid transparent;border-radius:6px;white-space:nowrap}
+.top .atlas-views:has(#continent-picker:not([hidden])) [data-atlas="continents"]{border-radius:6px 0 0 6px}
+.top .atlas-views #continent-picker:not([hidden]){height:40px;min-height:40px;margin:0 0 0 -8px;padding:9px 32px 9px 14px;font-size:14px;font-weight:500;line-height:20px;border-radius:0 6px 6px 0;border-left:1px solid #ffffff38}
+.top #atlas-perspective{margin:0;align-self:center}
+.top #atlas-perspective .map-perspective{padding:3px;gap:2px;height:40px;border-radius:6px}
+.top #atlas-perspective button{height:32px;min-height:32px;padding:6px 14px;font-size:13px;line-height:20px}
+.top .navigation-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;padding:8px 15px 0;border-top:0;border-bottom:0}
+.top .navigation-row[hidden]{display:none}
+.top .navigation-row #country-toolbar{display:flex;align-items:center;gap:12px;margin:0 auto 0 0;font-size:13px;line-height:20px;color:var(--muted);order:0}
+.top .navigation-row #country-toolbar[hidden]{display:none}
+.top #country-toolbar select{height:40px;min-height:40px;width:210px;margin:0;padding:9px 32px 9px 12px;font-size:13px;line-height:20px;border-radius:6px}
+.top .navigation-row .primary-nav{display:flex;align-items:center;justify-content:flex-end;gap:24px;padding:0;margin:0 0 0 auto;order:1}
+.top .primary-nav button,.top .primary-nav #journal{height:40px;min-height:40px;padding:10px 0;margin:0;font-size:13px;line-height:20px;white-space:nowrap}
+.top .primary-nav button[aria-pressed=true]::after{bottom:0}
+.top .primary-nav .visit-count{font-size:12px;line-height:20px;vertical-align:baseline}
+@media(max-width:760px){.top .atlas-navigation{flex-wrap:wrap;gap:12px}.top .navigation-row{gap:12px;padding:8px 15px 0}.top .navigation-row #country-toolbar{flex:1 1 240px}.top #country-toolbar select{width:auto;flex:1;max-width:280px}.top .navigation-row .primary-nav{gap:20px;flex:1 1 auto}.top .atlas-navigation .atlas-views>button{font-size:13px;padding-inline:12px}.top .atlas-views #continent-picker:not([hidden]){font-size:13px;max-width:160px;padding-left:12px}.top .navigation-row{padding-inline:13px}}
+
+/* Shared optical inset: 14px padding + 1px button border. */
+.top .atlas-navigation .atlas-views>button,.top .atlas-views #continent-picker:not([hidden]){font-size:14px;line-height:20px;font-weight:500}
+.top .atlas-views #continent-picker:not([hidden]){margin-right:0;padding-top:10px;padding-bottom:10px}
+.top .navigation-row .primary-nav button{box-sizing:border-box}
+.top .navigation-row #country-toolbar select{border:1px solid var(--control-border,var(--line));background-color:#fffefa}
+.top .navigation-row .primary-nav button[aria-pressed=true]::after{bottom:3px}
+@media(max-width:760px){.top .atlas-navigation .atlas-views>button,.top .atlas-views #continent-picker:not([hidden]){font-size:13px}.top .atlas-views #continent-picker:not([hidden]){margin-left:-8px}}
+
+/* One primary row: perspective, destination, then browsing mode. */
+.top .atlas-navigation{justify-content:flex-start;gap:20px;flex-wrap:wrap;padding:8px 0 10px}
+.top .atlas-navigation #atlas-perspective{order:0;flex-shrink:0}
+.top .atlas-navigation .atlas-views{order:1}
+.top .atlas-navigation>.primary-nav{order:2;display:flex;align-items:center;gap:20px;margin:0 0 0 auto;padding:0;flex:none}
+.top .atlas-navigation>.primary-nav[hidden]{display:none}
+.top .atlas-navigation>.primary-nav button,.top .atlas-navigation>.primary-nav #journal{height:40px;min-height:40px;margin:0;padding:10px 0;font-size:13px;line-height:20px}
+.top .navigation-row{padding:2px 0 0;min-height:0}
+.top .navigation-row:has(#country-toolbar[hidden]){display:none}
+.top .navigation-row #country-toolbar{margin:0;gap:12px}
+@media(max-width:1050px){.top .atlas-navigation{gap:10px 16px}.top .atlas-navigation>.primary-nav{gap:16px}}
+@media(max-width:650px){.top .atlas-navigation>.primary-nav{margin-left:0;flex-basis:100%;justify-content:flex-end}.top .navigation-row{padding:0}.top .navigation-row #country-toolbar{margin:0}}
+
+/* Perspective belongs to the site identity; browsing stays in the nav row. */
+.top .identity-row #atlas-perspective{margin:0 0 0 8px;align-self:center;flex-shrink:0}
+.top .identity-row #atlas-perspective .map-perspective{background:#eeece4;border:1px solid #d7d9d0;border-radius:7px;padding:3px;height:38px}
+.top .identity-row #atlas-perspective button{height:30px;min-height:30px;padding:5px 14px;font-size:13px;line-height:20px;margin:0}
+.top .atlas-navigation .atlas-views{order:0}
+.top .atlas-navigation>.primary-nav{order:1}
+@media(max-width:760px){.top .identity-row{flex-wrap:wrap;gap:12px}.top .identity-row #atlas-perspective{margin:0}.top .identity-row #atlas-perspective button{padding-inline:10px}.top .identity-row .language-switch{margin-left:auto}}
+
+/* Country follows continent in one continuous geographic selector. */
+.top .navigation-row{display:none}
+.top .atlas-views #country-toolbar{display:flex;align-items:center;margin:0 0 0 -8px;padding:0;flex:none}
+.top .atlas-views #country-toolbar[hidden]{display:none}
+.top .atlas-views:has(#country-toolbar:not([hidden])) #continent-picker:not([hidden]){border-radius:0}
+.top .atlas-views #country-toolbar select{width:auto;max-width:230px;height:40px;min-height:40px;padding:9px 30px 9px 14px;margin:0;border:0;border-left:1px solid #ffffff38;border-radius:0 6px 6px 0;background-color:var(--ink);color:white;font-size:14px;line-height:20px}
+.top .atlas-views #country-toolbar select option{background:#fffefa;color:var(--ink)}
+@media(max-width:760px){.top .atlas-views #country-toolbar select{max-width:170px;font-size:13px}}
+
+.top .atlas-views #country-result-count{font-size:12px;line-height:20px;color:var(--muted);margin-left:4px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.top .atlas-views #country-result-count[hidden]{display:none}
+body:has(#country-toolbar:not([hidden])) .geo-places>h2,body:has(#country-toolbar:not([hidden])) .continent-info-column .result-heading{display:none}
+body:has(#country-toolbar:not([hidden])) .geo-places{margin-top:0}
+
+/* Align navigation control bounds with the map; keep them stable across tabs. */
+.top .atlas-navigation .atlas-views{margin-left:0}
+.top .atlas-navigation>.primary-nav{padding-right:0;margin-right:0}
+.top .identity-row .language-switch{margin-right:0}
+
+
+/* Consistent inset chevrons, including the country control. */
+.top .atlas-views #country-toolbar select{appearance:none;-webkit-appearance:none;padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m3 4.5 3 3 3-3' fill='none' stroke='white' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.top .atlas-views #continent-picker:not([hidden]){padding-right:36px;background-position:right 12px center}
+
+/* Phone navigation: explicit rows instead of joined controls wrapping mid-group. */
+@media(max-width:650px){
+ .top .atlas-navigation .atlas-views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}
+ .top .atlas-navigation .atlas-views>button{width:100%;padding-inline:8px}
+ .top .atlas-views:has(#continent-picker:not([hidden])) [data-atlas="continents"]{border-radius:6px}
+ .top .atlas-views #continent-picker:not([hidden]){margin:0;width:100%;max-width:none;border-radius:6px;border-left:0}
+ .top .atlas-views #country-toolbar{margin:0;min-width:0}
+ .top .atlas-views #country-toolbar select{width:100%;max-width:none;border-radius:6px;border-left:0;padding-left:12px}
+ .top .atlas-views #country-result-count{grid-column:1/-1;margin:0}
+ .top .atlas-navigation>.primary-nav{width:100%;gap:16px;justify-content:flex-end;flex-wrap:wrap}
+}

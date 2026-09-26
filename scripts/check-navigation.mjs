@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 const html=fs.readFileSync('dist/index.html','utf8'), elements=new Map();
 function element(){return {dataset:{},innerHTML:'',textContent:'',value:'',hidden:false,handlers:{},classList:{toggle(){}},setAttribute(){},addEventListener(k,v){this.handlers[k]=v;},close(){},showModal(){},click(){}};}
 for(const [,id]of html.matchAll(/id="([^"]+)"/g))elements.set(id,element());
-for(const id of ['country-tools','country','era-mobile','timeline','chapter','result-title','count','sites'])elements.set(id,element());
+for(const id of ['country-tools','country','era-mobile','timeline','chapter-map','chapter','result-title','count','sites'])elements.set(id,element());
 const selectors=new Map(['aside','.workspace','.close'].map(x=>[x,element()]));
 const context=vm.createContext({document:{documentElement:{},querySelectorAll(){return [];},getElementById:id=>{assert(elements.has(id),`Missing DOM element: ${id}`);return elements.get(id);},querySelector:s=>selectors.get(s),addEventListener(){}},localStorage:{getItem(){return null;},setItem(){}},window:{scrollTo(){}},console});
 vm.runInContext(['data.js','content-en.js','i18n.js','continent-template.js','reading.js','app.js'].map(f=>fs.readFileSync('dist/'+f,'utf8')).join('\n'),context);
@@ -34,12 +34,12 @@ console.log('Bilingual names passed: complete coverage, Greek labels, clipboard 
 run("opened=null;mode='country';country='英国';selected='industry';records={'1517':{status:'visited',note:'我的笔记 / my note'}};render();");
 const beforeIds=run('JSON.stringify(visibleSites().map(s=>s.id))');
 elements.get('language').onclick();
-assert.equal(run('lang'),'en');assert.equal(context.document.documentElement.lang,'en');assert.equal(context.document.title,'History Along the Way');
+assert.equal(run('lang'),'en');assert.equal(context.document.documentElement.lang,'en');assert.equal(context.document.title,'Along the Way');
 assert.equal(run('country'),'英国');assert.equal(run('selected'),'industry');assert.equal(run('mode'),'country');assert.equal(run('JSON.stringify(visibleSites().map(s=>s.id))'),beforeIds);
 assert(/value="英国"(?: selected)?>United Kingdom/.test(elements.get('country').innerHTML));
 assert(!/[\u3400-\u9fff]/.test(elements.get('sites').innerHTML),'Chinese leaked into English country cards');
 run("renderDetail('1517')");assert(elements.get('detail-body').innerHTML.includes('Macedonian, Roman and Christian'));assert(elements.get('detail-body').innerHTML.includes('我的笔记 / my note'));
-elements.get('detail-language').onclick();assert.equal(run('lang'),'zh');assert.equal(run('opened'),'1517');assert(elements.get('detail-body').innerHTML.includes('腓立比'));assert.equal(run("records['1517'].note"),'我的笔记 / my note');
+elements.get('language').onclick();assert.equal(run('lang'),'zh');assert.equal(run('opened'),'1517');assert(elements.get('detail-body').innerHTML.includes('腓立比'));assert.equal(run("records['1517'].note"),'我的笔记 / my note');
 run("lang='en';for(const s of SITES){for(const key of ['name','city','period','why','see','question','relation']){if(!s[key]||/[\\u3400-\\u9fff]/.test(s[key]))throw Error('Missing English '+s.id+' '+key)}renderDetail(s.id);}opened=null;render();");
 assert(run("ERAS.every(e=>['date','title','question','summary','next'].every(k=>e[k]&&!/[\\u3400-\\u9fff]/.test(e[k])))"));
 assert.equal(run('PERIODS.flatMap(p=>p.eras).length'),run('ERAS.length'));

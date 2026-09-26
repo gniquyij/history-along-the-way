@@ -175,8 +175,8 @@ function booksForSite(siteId, catalogue=READING_BOOKS){
  return catalogue.filter(b=>b.rating>=4.0&&b.ratingCount>1000&&b.sites[String(siteId)])
  .sort((a,b)=>b.rating-a.rating||b.ratingCount-a.ratingCount||a.title.localeCompare(b.title)).slice(0,3);
 }
-function readingHTML(siteId){
- const books=booksForSite(siteId);
+function readingHTML(siteId,catalogue=READING_BOOKS){
+ const books=booksForSite(siteId,catalogue);
  if(!books.length)return '';
  return `<section class="related-reading" aria-label="${L('相关阅读','Further reading')}"><h3>${L('相关阅读','Further reading')}</h3><ul class="reading-list">${books.map(b=>`<li><h4><a href="${esc(b.goodreads)}" target="_blank" rel="noopener" lang="en">${esc(b.title)} ↗</a></h4><p class="reading-author" lang="en">${esc(b.authors)}</p><p class="reading-rating">Goodreads ${b.rating.toFixed(2)} / 5 · ${b.ratingCount.toLocaleString(lang==='zh'?'zh-CN':'en-US')} ${L('人评分','ratings')}</p><p>${esc(L(...b.sites[String(siteId)]))}</p><p class="reading-credential"><a href="${esc(b.credentialSource)}" target="_blank" rel="noopener">${esc(L(...b.credential))} ↗</a></p></li>`).join('')}</ul><p class="reading-source-note">${L('评分查证于 2026-09-25，非实时数据。','Ratings checked on 2026-09-25; not live data.')}</p></section>`;
 }

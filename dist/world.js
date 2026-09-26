@@ -17,7 +17,7 @@ const nodes=[
 for(let i=nodes.length-1;i>=0;i--)if(nodes[i].r==='africa')nodes.splice(i,1);
 nodes.push(...AFRICA_NODES);
 windows.push(['−2700—−2200','约公元前2700—前2200','c. 2700–2200 BCE'],['−1550—−1070','约公元前1550—前1070','c. 1550–1070 BCE'],['1800—今天','1800年至今','1800–present'],['史前','史前（各地年代不同）','Prehistory (regional chronologies vary)']);
-let view='world',win=1,region='africa';
+let view='world',win=1,region='africa',lens='history';
 const t=a=>L(...a),regionName=r=>{const x=regions.find(a=>a[0]===r);return L(x[1],x[2]);};
 const property=n=>`<details class="world-property"><summary>${n.location?`<small>${esc(t(n.location))}</small>`:""}<span class="world-kicker">${esc(t(n.period))}</span><strong>${esc(t(n.name))}</strong>${lang==='zh'?`<small>${esc(n.name[1])}</small>`:''}<span class="world-open">${L('遗产与参观重点','Property & visiting notes')} ↗</span></summary><div class="world-property-body"><small>${esc(t(n.date))}</small><p>${esc(t(n.why))}</p><div class="visit-focus"><div class="visit-focus-label">${L('参观重点','What to look for')}</div><p>${esc(t(n.see))}</p></div><p><a href="https://whc.unesco.org/en/list/${n.id}/" target="_blank" rel="noopener">UNESCO #${n.id} ↗</a> · <a href="${mapSearch(n.name[1])}" target="_blank" rel="noopener">${L('地图','Map')} ↗</a></p></div></details>`;
 const europeLink=()=>`<button data-world-era="${['rome','medieval','dynasties','prehistory','bronze','postwar','prehistory'][win]}">${L('打开欧洲对应章节','Open the European chapter')} →</button>`;
@@ -36,14 +36,46 @@ function continentLayout(){
  return continentShellHTML(continentParts(model),continentMode,{tools:'continent-country-tools',country:'continent-country',mobile:'continent-era-mobile',timeline:'continent-timeline',chapter:'continent-chapter',title:'continent-result-title',count:'continent-count',sites:'continent-sites'});
 }
 
+function renderContinentPicker(){
+ const tab=document.querySelector('[data-atlas="continents"]');
+ let select=document.getElementById('continent-picker');
+ if(!select){select=document.createElement('select');select.id='continent-picker';tab.after(select);select.onchange=()=>{region=select.value;selectedCountry='';geoTopic='all';geoPage=1;view=region==='europe'&&lens==='history'?'europe':'continents';if(view==='europe'){country='';render();}draw();document.dispatchEvent(new Event('atlas-map-selection'));};}
+ select.hidden=!['continents','europe'].includes(view);
+ select.setAttribute('aria-label',L('选择大洲','Choose a continent'));
+ const entries=[['africa','非洲','Africa'],['europe','欧洲','Europe'],['north','北美洲','North America'],['oceania','大洋洲','Oceania'],['southamerica','南美洲','South America']].sort((a,b)=>a[2].localeCompare(b[2],'en'));
+ select.innerHTML=entries.map(([id,zh,en])=>`<option value="${id}">${L(zh,en)}</option>`).join('');select.value=view==='europe'?'europe':region;
+}
 function draw(){
+ document.getElementById('about-open').href='about.html?lang='+lang;
+ const navigation=document.querySelector('.atlas-navigation'),perspective=document.getElementById('atlas-perspective'),modes=document.querySelector('.primary-nav');
+ document.querySelector('.identity-row .brand').after(perspective);navigation.append(modes);
+ modes.hidden=!['continents','europe'].includes(view);
+ renderContinentPicker();
+ if(lens==='history'&&view==='continents'&&region==='europe'){view='europe';render();}
+ document.getElementById("atlas-perspective").innerHTML=mapPerspectiveHTML(lens);
+ document.querySelectorAll('[data-lens]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lens===lens));
+ document.querySelector('[data-atlas="connections"]').hidden=lens==='geography';
+ if(lens==='geography'){
+  if(view==='europe'){view='continents';region='europe';}
+  document.querySelectorAll('[data-atlas]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.atlas===(view==='world'?'world':'continents')));
+  $('continent-nav').hidden=view==='world';
+  $('continent-nav').innerHTML=[['africa','非洲','Africa'],['europe','欧洲','Europe'],['north','北美洲','North America'],['oceania','大洋洲','Oceania'],['southamerica','南美洲','South America']].map(r=>`<button data-continent="${r[0]}" aria-pressed="${region===r[0]}">${L(r[1],r[2])}</button>`).join('');
+  document.querySelector('.navigation-row').hidden=view==='world';document.querySelector('.atlas-region').textContent=L(...GEO_ATLASES[region].name);$('history').querySelector('span').textContent=L('按时间轴浏览','By timeline');$('history').setAttribute('aria-pressed',continentMode==='timeline');$('browse').setAttribute('aria-pressed',continentMode==='country');$('journal').hidden=true;$('records-tools').hidden=true;$('europe-main').hidden=true;$('world-main').hidden=false;
+  $('world-main').innerHTML=geographyHTML({view,region,selectedCountry:continentMode==='country'?selectedCountry:'',continentMode});mountGeographyMap();
+  const worldTime=$('geo-world-time');if(worldTime)worldTime.onchange=e=>{geoTopic='period-'+Object.keys(GEO_PERIODS)[Number(e.target.value)];draw();$('geo-world-time')?.focus({preventScroll:true});};
+  const stageSelect=$('geo-stage-select');if(stageSelect)stageSelect.onchange=e=>{geoTopic=e.target.value;geoPage=1;draw();$('geo-stage-select')?.focus({preventScroll:true});};
+  const select=$('geo-country');if(select)select.onchange=e=>{selectedCountry=e.target.value;geoTopic='all';geoPage=1;draw();};return;
+ }
+
+ $('journal').hidden=false;
  document.querySelectorAll('[data-atlas]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.atlas===(view==='europe'?'continents':view)));
  const continentNav=$('continent-nav');continentNav.hidden=!['europe','continents'].includes(view);continentNav.innerHTML=[['europe','欧洲','Europe'],...Object.entries(REGIONAL_ATLASES).map(([id,c])=>[id,...c.name])].sort((a,b)=>a[2].localeCompare(b[2],'en')).map(r=>`<button data-continent="${r[0]}" aria-pressed="${view==='europe'?r[0]==='europe':r[0]===region}">${L(r[1],r[2])}</button>`).join('');
  // One persistent navigation instance for every continent.
  const nav=document.querySelector('.navigation-row');
  nav.hidden=!['europe','continents'].includes(view);
  const isEurope=view==='europe';
- nav.querySelector('.atlas-region').textContent=isEurope?(mode==='journal'?L('跨洲参观记录 / MY VISITS','MY VISITS'):L('欧洲篇 / EUROPE','EUROPE')):L(t(REGIONAL_ATLASES[region].name)+'篇 / '+REGIONAL_ATLASES[region].name[1].toUpperCase(),REGIONAL_ATLASES[region].name[1].toUpperCase());
+ const activeRegion=REGIONAL_ATLASES[region];
+ nav.querySelector('.atlas-region').textContent=isEurope?(mode==='journal'?L('跨洲参观记录 / MY VISITS','MY VISITS'):L('欧洲篇 / EUROPE','EUROPE')):view==='continents'&&activeRegion?L(t(activeRegion.name)+'篇 / '+activeRegion.name[1].toUpperCase(),activeRegion.name[1].toUpperCase()):'';
  $('history').setAttribute('aria-pressed',isEurope?mode==='era':continentMode==='timeline');
  $('browse').setAttribute('aria-pressed',isEurope?mode==='country':continentMode==='country');
  $('journal').setAttribute('aria-pressed',isEurope&&mode==='journal');
@@ -54,24 +86,31 @@ function draw(){
  if(view==='world')content=renderWorldMap();
  if(view==='continents')content=continentLayout();
  if(view==='connections')content=`<div class="connection-story"><span class="world-kicker">01 / ${L('贸易与宗教传播','Trade and religious exchange')}</span><h2>${L('东亚 ↔ 中亚','East Asia ↔ Central Asia')}</h2><p>${L('长安—天山廊道连接东亚与中亚的城市和交通节点。沿线的城址、驿站与宗教遗存，帮助我们理解商品如何流通，信仰与知识如何随人群往来传播。','The Chang’an–Tianshan corridor connects cities and transport hubs in East and Central Asia. Its city remains, way stations and religious sites help explain how goods circulated and how beliefs and knowledge travelled with people.')}</p>${property(nodes[0])}</div><div class="connection-story"><span class="world-kicker">02 / ${L('商路与建筑交流','Caravan routes and architectural exchange')}</span><h2>${L('阿拉伯 · 埃及 · 东地中海','Arabia · Egypt · Eastern Mediterranean')}</h2><p>${L('以佩特拉为观察点：商路连接不同地区，当地建筑也吸收希腊化形式。它与欧洲古代章节存在主题联系，但不能据此把两处遗产画成已证实的直达路线。','At Petra, trade connected regions and local architecture incorporated Hellenistic forms. This connects thematically with European antiquity, without establishing a direct route between individual properties.')}</p>${property(nodes[1])}<button data-world-era="greece">${L('关联阅读：希腊世界','Related reading: the Greek world')} →</button></div>`;
- $('world-main').innerHTML=`${view==='continents'?'':`<section class="world-heading"><div><span class="world-kicker">${L('世界篇 · 结构预览','WORLD · EXPLORATORY EDITION')}</span><h1>${heading}</h1><p>${L('共用年代，各地保留自己的分期。由节点进入遗产，再回到地区历史。','Shared dates, locally meaningful periods. Move from historical nodes to heritage and regional stories.')}</p></div><span class="preview-label">${L('分洲历史图谱','Regional history atlas')}</span></section>`}${content}`;
+ $('world-main').innerHTML=view==='connections'?`<section class="connections-page"><div class="connections-grid">${content}</div></section>`:content;
  const countrySelect=$('continent-country');if(countrySelect)countrySelect.onchange=e=>{selectedCountry=e.target.value;draw();};
  const mobile=$('continent-era-mobile');if(mobile)mobile.onchange=e=>{chapterSelection[region]=REGIONAL_ATLASES[region].chapters.findIndex(c=>c.id===e.target.value);draw();};
 }
 const regionalDialog=document.createElement('dialog');regionalDialog.id='regional-detail';regionalDialog.innerHTML='<div class="dialog-toolbar"><button type="button" data-regional-close aria-label="Close">×</button></div><div class="regional-detail-body"></div>';document.body.append(regionalDialog);
 function showRegionalDetail(id){const n=nodes.find(x=>x.id===id);if(!n)return;regionalDialog.querySelector('.regional-detail-body').innerHTML=`<div class="location">${n.location?esc(t(n.location)):''}</div><h2 class="detail-title">${esc(t(n.name))}</h2><p class="name-en">${esc(n.name[1])}</p><div class="badges"><span class="badge unesco">UNESCO #${n.id}</span></div><h3>${L('为什么与这段历史有关','Historical connection')}</h3><p>${esc(t(n.why))}</p><h3>${L('现场观察','On-site observations')}</h3><p>${esc(t(n.see))}</p><div class="detail-links"><a href="https://whc.unesco.org/en/list/${n.id}/" target="_blank" rel="noopener">UNESCO ↗</a><a href="${mapSearch(n.name[1])}" target="_blank" rel="noopener">${L('地图搜索','Search maps')} ↗</a></div>`;regionalDialog.showModal();}
 regionalDialog.addEventListener('click',e=>{if(e.target===regionalDialog){const r=regionalDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)regionalDialog.close();}});
-document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.chapterId){if($('detail').open)$('detail').close();if(b.dataset.chapterRegion==='europe'){view='europe';navigateEra(b.dataset.chapterId);}else{region=b.dataset.chapterRegion;view='continents';continentMode='timeline';chapterSelection[region]=REGIONAL_ATLASES[region].chapters.findIndex(c=>c.id===b.dataset.chapterId);}draw();}if(b.dataset.worldRange!==undefined){worldRangeIndex=Number(b.dataset.worldRange);draw();}if(b.dataset.worldItem){worldItemId=b.dataset.worldItem;const panel=$('world-main').querySelector('.parallel-scroll');const x=panel?.scrollLeft||0;draw();$('world-main').querySelector('.parallel-scroll').scrollLeft=x;$('world-main').querySelector('[data-world-item="'+worldItemId+'"]').focus({preventScroll:true});}if(b.hasAttribute('data-global-journal')){view='europe';mode='journal';render();draw();}if(b.dataset.status)draw();if(b.hasAttribute('data-regional-close'))regionalDialog.close();if(b.dataset.regionalDetail)showRegionalDetail(b.dataset.regionalDetail);if(b.dataset.atlas){view=b.dataset.atlas;if(view==='continents'&&region==='europe')view='europe';draw();}if(b.dataset.continent){if(region!==b.dataset.continent)selectedCountry='';region=b.dataset.continent;view=region==='europe'?'europe':'continents';draw();}if(b.dataset.continentMode){continentMode=b.dataset.continentMode;draw();}if(b.dataset.continentChapter!==undefined&&!b.disabled){chapterSelection[region]=Number(b.dataset.continentChapter);draw();}if(b.dataset.window!==undefined){win=Number(b.dataset.window);draw();}if(b.dataset.africaChapter){region='africa';view='continents';continentMode='timeline';chapterSelection.africa=AFRICA_CHAPTERS.findIndex(c=>c.id===b.dataset.africaChapter);$('detail').close();draw();}if(b.dataset.worldEra){view='europe';navigateEra(b.dataset.worldEra);draw();window.scrollTo({top:0,behavior:'smooth'});}});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.lens){const mapTop=b.closest('.atlas-map-shell')?.getBoundingClientRect().top;lens=b.dataset.lens;if(view==='europe'){region='europe';selectedCountry=COUNTRIES_EN[country]||'';}if(lens==='history'&&view!=='world'){if(region==='europe'){view='europe';mode='country';country=Object.keys(COUNTRIES_EN).find(c=>COUNTRIES_EN[c]===selectedCountry)||'';render();}else {continentMode='country';if(!SITES.some(s=>s.continent===region&&s.country.split(' / ').some(c=>COUNTRIES_EN[c]===selectedCountry)))selectedCountry='';}}if(view==='connections'&&lens==='geography')view='world';draw();if(mapTop!==undefined)requestAnimationFrame(()=>{const next=document.querySelector('#world-main:not([hidden]) .atlas-map-shell,#europe-main:not([hidden]) .atlas-map-shell');if(next)window.scrollBy(0,next.getBoundingClientRect().top-mapTop);});}
+ if(b.dataset.geoEnter){view='continents';region=b.dataset.geoEnter;selectedCountry='';geoTopic='all';geoPage=1;continentMode='country';draw();}
+ if(b.dataset.geoTopic){const timelineY=document.querySelector('.geo-time-list')?.scrollTop||0;geoTopic=b.dataset.geoTopic;geoPage=1;draw();const timeline=document.querySelector('.geo-time-list');if(timeline)timeline.scrollTop=timelineY;document.querySelector(`[data-geo-topic="${geoTopic}"]`)?.focus({preventScroll:true});}
+ if(b.dataset.geoPage){geoPage=Number(b.dataset.geoPage);draw();const panel=document.querySelector('.geo-continent-layout:not(.geo-timeline-layout)>.continent-info-column');if(panel&&window.innerWidth>900)panel.scrollTop=0;else document.querySelector('.geo-places')?.scrollIntoView({block:'start'});}
+ if(b.dataset.geoPlace){openGeographyPlace(b.dataset.geoPlace);}
+ if(b.dataset.chapterId){if($('detail').open)$('detail').close();if(b.dataset.chapterRegion==='europe'){view='europe';navigateEra(b.dataset.chapterId);}else{region=b.dataset.chapterRegion;view='continents';continentMode='timeline';chapterSelection[region]=REGIONAL_ATLASES[region].chapters.findIndex(c=>c.id===b.dataset.chapterId);}draw();}if(b.dataset.worldRange!==undefined){worldRangeIndex=Number(b.dataset.worldRange);draw();}if(b.dataset.worldItem){worldItemId=b.dataset.worldItem;const panel=$('world-main').querySelector('.parallel-scroll');const x=panel?.scrollLeft||0;draw();$('world-main').querySelector('.parallel-scroll').scrollLeft=x;$('world-main').querySelector('[data-world-item="'+worldItemId+'"]').focus({preventScroll:true});}if(b.hasAttribute('data-global-journal')){view='europe';mode='journal';render();draw();}if(b.dataset.status)draw();if(b.hasAttribute('data-regional-close'))regionalDialog.close();if(b.dataset.regionalDetail)showRegionalDetail(b.dataset.regionalDetail);if(b.dataset.atlas){view=b.dataset.atlas;if(view==='continents'&&region==='europe')view='europe';draw();}if(b.dataset.continent){if(region!==b.dataset.continent){selectedCountry='';geoTopic='all';geoPage=1;}region=b.dataset.continent;view=region==='europe'?'europe':'continents';draw();}if(b.dataset.continentMode){continentMode=b.dataset.continentMode;draw();}if(b.dataset.continentChapter!==undefined&&!b.disabled){chapterSelection[region]=Number(b.dataset.continentChapter);draw();}if(b.dataset.window!==undefined){win=Number(b.dataset.window);draw();}if(b.dataset.africaChapter){region='africa';view='continents';continentMode='timeline';chapterSelection.africa=AFRICA_CHAPTERS.findIndex(c=>c.id===b.dataset.africaChapter);$('detail').close();draw();}if(b.dataset.worldEra){view='europe';navigateEra(b.dataset.worldEra);draw();window.scrollTo({top:0,behavior:'smooth'});}});
 $('home').addEventListener('click',()=>{view='europe';draw();});
 // Route the shared controls to the active continent; markup and styling stay shared.
-$('history').onclick=()=>{if(view==='continents'){continentMode='timeline';}else{view='europe';mode='era';render();}draw();};
+$('history').onclick=()=>{if(view==='continents'){continentMode='timeline';if(lens==='geography'){selectedCountry='';geoTopic='all';geoPage=1;}}else{view='europe';mode='era';render();}draw();};
 $('browse').onclick=()=>{if(view==='continents'){continentMode='country';}else{view='europe';mode='country';render();}draw();};
 $('journal').onclick=()=>{view='europe';mode='journal';country='';render();draw();};
 $('journal').addEventListener('click',draw);$('history').addEventListener('click',draw);$('browse').addEventListener('click',draw);
-$('language').addEventListener('click',draw);$('detail-language').addEventListener('click',draw);
+$('language').addEventListener('click',draw);
 window.atlasRoute={
- read(){return {view,region,chapter:REGIONAL_ATLASES[region]?.chapters[chapterSelection[region]||0]?.id,continentMode,selectedCountry};},
- apply(p){view=['world','europe','continents','connections'].includes(p.get('view'))?p.get('view'):'world';region=Object.hasOwn(REGIONAL_ATLASES,p.get('region'))?p.get('region'):'africa';continentMode=p.get('mode')==='country'?'country':'timeline';selectedCountry=SITES.some(s=>s.continent===region&&s.country.split(' / ').some(c=>COUNTRIES_EN[c]===p.get('country')))?p.get('country'):'';chapterSelection[region]=Math.max(0,REGIONAL_ATLASES[region].chapters.findIndex(c=>c.id===p.get('chapter')));draw();}
+ read(){return {view,region,lens,geoTopic,chapter:REGIONAL_ATLASES[region]?.chapters[chapterSelection[region]||0]?.id,continentMode,selectedCountry};},
+ apply(p){lens=p.get('lens')==='geography'?'geography':'history';geoTopic=(GEO_STAGES.some(t=>t.topic===p.get('topic'))||Object.keys(GEO_PERIODS).some(k=>'period-'+k===p.get('topic')))?p.get('topic'):'all';geoPage=1;view=['world','europe','continents','connections'].includes(p.get('view'))?p.get('view'):'world';region=(p.get('region')==='europe'||Object.hasOwn(REGIONAL_ATLASES,p.get('region')))?p.get('region'):'africa';continentMode=p.get('mode')==='country'?'country':'timeline';selectedCountry=lens==='geography'?(geographyCountries(region).includes(p.get('country'))?p.get('country'):''):SITES.some(s=>s.continent===region&&s.country.split(' / ').some(c=>COUNTRIES_EN[c]===p.get('country')))?p.get('country'):'';chapterSelection[region]=Math.max(0,REGIONAL_ATLASES[region]?.chapters.findIndex(c=>c.id===p.get('chapter'))||0);draw();}
 };
 draw();
 })();
+
+// Site introduction stays outside the main browsing workspace.

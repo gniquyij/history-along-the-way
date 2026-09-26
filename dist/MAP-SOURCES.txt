@@ -1,0 +1,17 @@
+Map sources
+
+Leaflet 1.9.4: BSD-2-Clause. Licence: vendor/leaflet/LICENSE.
+https://leafletjs.com/
+
+Natural Earth: public domain.
+Land: ne_50m_land.geojson; rivers: global ne_50m_rivers_lake_centerlines.geojson (462 features).
+https://github.com/nvkelso/natural-earth-vector/tree/master/geojson
+https://www.naturalearthdata.com/about/terms-of-use/
+Retrieved 2026-09-25. River geometry is generalised and is not a navigation survey.
+Global rivers retrieved 2026-09-26. Lines do not encode flow direction.
+
+OpenTopoMap tiles: map data © OpenStreetMap contributors, SRTM;
+map style © OpenTopoMap, CC BY-SA 3.0. Tiles are requested at runtime, not bundled.
+https://opentopomap.org/about
+https://www.openstreetmap.org/copyright
+https://creativecommons.org/licenses/by-sa/3.0/

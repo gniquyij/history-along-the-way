@@ -1,5 +1,6 @@
 /* Shared country browser map. All geometry and points load locally. */
 function countryMapHTML(sites, countryName='') {
+ if(typeof sharedMapHTML==='function')return sharedMapHTML('country',sites.map(s=>s.id),countryName);
  return `<section class="country-map-section" data-country-map data-site-ids="${sites.map(s=>s.id).join(',')}" data-country-name="${esc(countryName)}"><header><h3>${L('遗产分布','Heritage locations')}</h3><span>${countryName?L('点击地点查看详情','Select a location for details'):L(`${sites.length} 处世界遗产`,`${sites.length} World Heritage properties`)}</span></header><div class="country-map-surface" tabindex="0" role="group" aria-label="${L('遗产地图，可拖动；方向键平移，加减键缩放','Heritage map: drag or use arrow keys to pan; plus and minus to zoom')}"><svg class="country-map-svg" aria-hidden="true"></svg><div class="country-map-pins"></div><div class="country-map-controls"><button type="button" data-country-zoom="in" aria-label="${L('放大','Zoom in')}">+</button><button type="button" data-country-zoom="out" aria-label="${L('缩小','Zoom out')}">−</button><button type="button" data-country-zoom="reset">${L('适应范围','Fit locations')}</button></div></div><div class="country-map-selection" hidden></div><p class="country-map-caption"></p></section>`;
 }
 const countryMapViews = new Map();
