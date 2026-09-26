@@ -810,3 +810,6 @@ body:has(#world-main:not([hidden]) .overview-map-with-time) #world-main{padding-
 
 /* Give the footer balanced breathing room above and below its text. */
 body>.atlas-footer{padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+
+/* Country results start at the map edge when their heading lives in navigation. */
+body:has(#country-toolbar:not([hidden])) .continent-info-column .heritage-list{margin-top:0}
